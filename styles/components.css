@@ -152,7 +152,7 @@
   }
 
   .hero__content {
-    padding: var(--space-lg) var(--space-lg) var(--space-xl) var(--space-md);
+    padding: var(--space-xl) var(--space-lg) var(--space-xl) var(--space-md);
   }
 
   .site-header__inner {
@@ -274,7 +274,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: left;
   min-height: inherit;
 }
 
@@ -304,7 +304,8 @@
 
 .hero__content {
   position: relative;
-  padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-lg);
+  padding: calc(var(--space-xl) + var(--space-md)) var(--space-xl) var(--space-xl)
+    var(--space-lg);
   color: #ffffff;
   max-width: 540px;
 }
@@ -347,6 +348,24 @@
 
 .hero__message-item {
   color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .hero .container {
+    justify-content: left;
+  }
+
+  .hero__content {
+    margin-inline: auto;
+    text-align: left;
+    padding: calc(var(--space-xl) + var(--space-md)) var(--space-lg)
+      var(--space-xl) var(--space-md);
+  }
+
+  .hero__actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .team-profiles {
