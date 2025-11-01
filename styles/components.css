@@ -1,7 +1,9 @@
+/* Hero wrapper that keeps the video section snug against following content */
 .hero-section {
   padding: 0 0 var(--space-xl);
 }
 
+/* Transparent header that floats above the hero background media */
 .site-header {
   position: absolute;
   inset: 0 0 auto 0;
@@ -11,6 +13,7 @@
   pointer-events: none;
 }
 
+/* Frosted-glass bar that houses brand and navigation */
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -24,6 +27,7 @@
   pointer-events: auto;
 }
 
+/* Left side of header: brand + toggler */
 .site-header__bar {
   display: flex;
   align-items: center;
@@ -31,6 +35,7 @@
   gap: var(--space-xs);
 }
 
+/* Logotype styling; keeps text crisp and uppercase */
 .site-header__brand {
   font-family: var(--font-heading);
   font-size: 1.125rem;
@@ -41,6 +46,7 @@
   white-space: nowrap;
 }
 
+/* Mobile hamburger button hidden on wide screens */
 .site-nav__toggle {
   display: none;
   align-items: center;
@@ -61,6 +67,7 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Three stacked bars used for the hamburger icon */
 .site-nav__toggle-bars {
   display: inline-flex;
   flex-direction: column;
@@ -69,6 +76,7 @@
   height: 16px;
 }
 
+/* Individual bar with transition to morph into an "X" */
 .site-nav__toggle-bar {
   display: block;
   width: 100%;
@@ -90,11 +98,13 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Main navigation list sits inline with header */
 .site-nav {
   display: flex;
   align-items: center;
 }
 
+/* Horizontal nav layout for desktop */
 .site-nav__list {
   display: flex;
   align-items: center;
@@ -104,6 +114,7 @@
   padding: 0;
 }
 
+/* Base link styling with subtle hover lift */
 .site-nav__link {
   color: inherit;
   text-decoration: none;
@@ -118,6 +129,7 @@
   transform: translateY(-1px);
 }
 
+/* Highlighted nav button for primary action */
 .site-nav__link--cta {
   display: inline-flex;
   align-items: center;
@@ -135,7 +147,9 @@
   background: var(--color-accent-strong);
 }
 
+/* Responsive header adjustments on tablet and below */
 @media (max-width: 900px) {
+  /* Dock header to top of viewport once layout stacks */
   .site-header {
     position: fixed;
     inset: 0 0 auto 0;
@@ -143,18 +157,23 @@
     z-index: 20;
   }
 
+  /* Offset anchors so in-page links do not slide under fixed header */
   section[id] {
     scroll-margin-top: clamp(96px, 18vw, 132px);
   }
 
+  /* Add top padding so hero copy clears the fixed header */
   .hero {
     padding-top: clamp(96px, 18vw, 132px);
   }
 
+  /* Keep hero text readable when layout becomes single column */
   .hero__content {
     padding: var(--space-xl) var(--space-lg) var(--space-xl) var(--space-md);
   }
 
+  /* Stack brand, toggler, and nav for mobile-friendly header */
+  /* Round the card slightly less on small phones */
   .site-header__inner {
     flex-direction: column;
     align-items: stretch;
@@ -171,6 +190,7 @@
     display: inline-flex;
   }
 
+  /* Slide-out menu body */
   .site-nav {
     width: 100%;
     flex-direction: column;
@@ -183,20 +203,24 @@
     box-shadow: var(--shadow-soft);
   }
 
+  /* Hide nav until JavaScript toggles .is-open */
   .site-header--menu-ready .site-nav {
     display: none;
   }
 
+  /* Reveal menu when burger button expands */
   .site-header--menu-ready .site-nav.is-open {
     display: flex;
   }
 
+  /* Stack items vertically for mobile */
   .site-nav__list {
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-xs);
   }
 
+  /* Give each menu item comfortable hit area */
   .site-nav__link {
     display: block;
     font-size: 0.95rem;
@@ -210,10 +234,12 @@
     padding-inline: var(--space-sm);
   }
 
+  /* Trim card padding and media size in tight spaces */
   .team-member {
     padding: var(--space-md);
   }
 
+  /* Adjust portrait ratio to feel more balanced on larger screens */
   .team-member__media {
     max-width: 220px;
     margin-inline: auto;
@@ -238,6 +264,7 @@
   }
 }
 
+/* Fine-tune spacing on very small devices */
 @media (max-width: 520px) {
   .site-header {
     padding-top: calc(var(--space-xs) * 1.5);
@@ -261,6 +288,7 @@
   }
 }
 
+/* Hero media container with layered video, overlay, and copy */
 .hero {
   position: relative;
   display: grid;
@@ -270,6 +298,7 @@
   overflow: hidden;
 }
 
+/* Ensures hero copy stays above video background */
 .hero .container {
   position: relative;
   z-index: 1;
@@ -278,12 +307,14 @@
   min-height: inherit;
 }
 
+/* Full-bleed video wrapper */
 .hero__background {
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
 
+/* Cover-fit the background video and darken slightly */
 .hero__background video {
   width: 100%;
   height: 100%;
@@ -291,6 +322,7 @@
   filter: brightness(0.8);
 }
 
+/* Gradient scrub overlay to guarantee readable text */
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -302,6 +334,7 @@
   );
 }
 
+/* Main hero copy block with generous padding */
 .hero__content {
   position: relative;
   padding: calc(var(--space-xl) + var(--space-md)) var(--space-xl) var(--space-xl)
@@ -319,6 +352,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Rotating message stack; only one line visible at a time */
 .hero__message {
   position: relative;
   display: grid;
@@ -326,6 +360,7 @@
   overflow: hidden;
 }
 
+/* Individual message panel with fade/slide animation */
 .hero__message-item {
   grid-area: 1 / 1;
   opacity: 0;
@@ -334,6 +369,7 @@
   animation-fill-mode: forwards;
 }
 
+/* Stagger animation timings for each line */
 .hero__message-item:nth-child(1) {
   animation-delay: 0s;
 }
@@ -351,6 +387,7 @@
 }
 
 @media (max-width: 900px) {
+  /* Hero-specific tweaks when layout collapses */
   .hero .container {
     justify-content: left;
   }
@@ -362,28 +399,33 @@
       var(--space-xl) var(--space-md);
   }
 
+  /* Center CTAs when columns collapse */
   .hero__actions {
     justify-content: center;
     flex-wrap: wrap;
   }
 }
 
+/* Grid wrapper for list of team members */
 .team-profiles {
   display: grid;
   gap: var(--space-sm);
 }
 
+/* About section uses responsive grid spacing */
 .about-section {
   display: grid;
   gap: clamp(var(--space-md), 6vw, var(--space-xl));
   align-items: start;
 }
 
+/* Small stack for intro copy before team grid */
 .about-intro {
   display: grid;
   gap: var(--space-sm);
 }
 
+/* Individual team card with soft gradient highlight */
 .team-member {
   position: relative;
   display: grid;
@@ -399,6 +441,7 @@
   overflow: hidden;
 }
 
+/* Decorative radial glow tucked behind the team card */
 .team-member::after {
   content: "";
   position: absolute;
@@ -412,6 +455,7 @@
   pointer-events: none;
 }
 
+/* Portrait frame with consistent aspect ratio */
 .team-member__media {
   position: relative;
   z-index: 1;
@@ -427,6 +471,7 @@
   display: block;
 }
 
+/* Content column inside team card */
 .team-member__content {
   position: relative;
   z-index: 1;
@@ -434,6 +479,7 @@
   gap: 0.75rem;
 }
 
+/* Uppercase job title styling */
 .team-member__role {
   margin: -0.25rem 0 0;
   font-weight: 600;
@@ -443,6 +489,7 @@
   font-size: 0.85rem;
 }
 
+/* Bullet list of specialties per team member */
 .team-member ul {
   margin: 0;
   padding-left: 1.1rem;
@@ -451,21 +498,27 @@
   color: rgba(58, 44, 40, 0.75);
 }
 
+/* Accent-colored bullet markers */
 .team-member li::marker {
   color: var(--color-accent);
 }
 
+/* Name styling inside team card */
 .team-member h3 {
   margin: 0;
   font-size: 1.35rem;
   color: rgba(58, 44, 40, 0.92);
 }
 
+/* Tablet breakpoint: stretch team layout into columns */
 @media (min-width: 620px) {
+  /* Give cards extra breathing room as grid widens */
+  /* Two-up team layout for wider screens */
   .team-profiles {
     gap: var(--space-md);
   }
 
+  /* Switch card layout to two columns: portrait + text */
   .team-member {
     grid-template-columns: minmax(0, 180px) 1fr;
     align-items: center;
@@ -477,16 +530,19 @@
   }
 }
 
+/* Desktop breakpoint: two-column team grid and looser gaps */
 @media (min-width: 1024px) {
   .team-profiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Increase spacing between intro and team grid */
   .about-section {
     gap: var(--space-lg);
   }
 }
 
+/* Fade/slide loop that rotates hero bullet points */
 @keyframes heroMessageCycle {
   0% {
     opacity: 0;
@@ -510,6 +566,7 @@
   }
 }
 
+/* Button row beneath hero copy */
 .hero__actions {
   display: flex;
   flex-wrap: nowrap;
@@ -517,17 +574,20 @@
   margin-top: calc(var(--space-md) + 1rem); 
 }
 
+/* Keep hero buttons tidy and evenly padded */
 .hero__actions .cta {
   white-space: nowrap;
   padding-inline: var(--space-sm);
 }
 
+/* Primary hero button gets animated pulse */
 .hero__actions .cta[data-cta="hero-primary"] {
   position: relative;
   z-index: 1;
   animation: heroCtaPulse 2.8s ease-in-out infinite;
 }
 
+/* Outer glowing ring created with ::after */
 .hero__actions .cta[data-cta="hero-primary"]::after {
   content: "";
   position: absolute;
@@ -540,6 +600,8 @@
   background: rgba(255, 255, 255, 0.35);
 }
 
+/* Accessibility: disable hero text rotation when motion reduced */
+/* Respect reduced motion by freezing gallery/testimonial effects */
 @media (prefers-reduced-motion: reduce) {
   .hero__message {
     min-height: auto;
@@ -557,6 +619,7 @@
   }
 }
 
+/* Compress CTAs on small phones without stacking yet */
 @media (max-width: 600px) {
   .hero__actions {
     justify-content: center;
@@ -571,6 +634,7 @@
   }
 }
 
+/* Last-resort stack for extremely narrow widths */
 @media (max-width: 420px) {
   .hero__actions {
     flex-direction: column;
@@ -585,6 +649,7 @@
   }
 }
 
+/* Reusable button component */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -607,12 +672,14 @@
   transform: translateY(-1px);
 }
 
+/* Alternate outline style for secondary actions */
 .cta--ghost {
   background-color: transparent;
   color: inherit;
   border: 1px solid currentColor;
 }
 
+/* Small pill badge used to label service focus */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -627,11 +694,13 @@
   letter-spacing: 0.04em;
 }
 
+/* Card grid for services/features */
 .cards {
   display: grid;
   gap: var(--space-md);
 }
 
+/* Base card shell with shadow */
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius-base);
@@ -639,6 +708,7 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* Card header aligns icon and title */
 .card__header {
   display: flex;
   align-items: center;
@@ -646,12 +716,14 @@
   margin-bottom: var(--space-sm);
 }
 
+/* Title text inside card header */
 .card__title {
   font-size: 1.25rem;
   margin: 0;
   line-height: 1.1;
 }
 
+/* Circular backdrop for icon glyph */
 .card__icon {
   display: inline-flex;
   width: 44px;
@@ -665,6 +737,7 @@
   margin-bottom: 0;
 }
 
+/* Center the Lottie animation block */
 .lottie-wrapper {
   display: flex;
   justify-content: center;
@@ -672,22 +745,26 @@
   max-width: 100%;
 }
 
+/* Gentle float animation to add life to the Lottie graphic */
 section#tjanster .lottie-wrapper {
   animation: lottieFloat 7s ease-in-out infinite;
   will-change: transform, filter;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
 }
 
+/* Timeline-style list for process steps */
 .process {
   display: grid;
   gap: var(--space-md);
 }
 
+/* Each step gets a guiding rule line */
 .process__item {
   border-left: 2px solid var(--color-neutral);
   padding-left: var(--space-md);
 }
 
+/* Ken Burns slideshow container wrapping project photos */
 .kenburns-gallery {
   position: relative;
   overflow: hidden;
@@ -697,6 +774,7 @@ section#tjanster .lottie-wrapper {
   box-shadow: var(--shadow-soft);
 }
 
+/* Overlay vignette to keep text legible on top */
 .kenburns-gallery::after {
   content: "";
   position: absolute;
@@ -710,6 +788,7 @@ section#tjanster .lottie-wrapper {
   z-index: 2;
 }
 
+/* Each slide occupies full area and animates with pan/zoom */
 .kenburns-gallery__item {
   position: absolute;
   inset: 0;
@@ -720,6 +799,7 @@ section#tjanster .lottie-wrapper {
   will-change: transform, opacity;
 }
 
+/* Bobbing motion for the Lottie illustration */
 @keyframes lottieFloat {
   0%,
   100% {
@@ -732,6 +812,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Reusable fade/slide cycle for testimonials */
 @keyframes testimonialCycle {
   0% {
     opacity: 0;
@@ -755,6 +836,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Pulse animation for carousel dots */
 @keyframes testimonialDot {
   0%,
   100% {
@@ -772,6 +854,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Slow glow sweeping underneath testimonial card */
 @keyframes testimonialGlow {
   0%,
   100% {
@@ -784,6 +867,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Inner pulse for hero CTA button */
 @keyframes heroCtaPulse {
   0%,
   100% {
@@ -794,6 +878,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Expanding ring for hero CTA button */
 @keyframes heroCtaPulseRing {
   0% {
     transform: scale(0.92);
@@ -809,6 +894,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Stagger slide timings so gallery loops seamlessly */
 .kenburns-gallery__item:nth-child(1) {
   animation-delay: 0s;
 }
@@ -828,6 +914,7 @@ section#tjanster .lottie-wrapper {
   animation-delay: 30s;
 }
 
+/* Slightly boosted saturation for richer imagery */
 .kenburns-gallery__item img {
   width: 100%;
   height: 100%;
@@ -835,6 +922,7 @@ section#tjanster .lottie-wrapper {
   filter: saturate(1.05);
 }
 
+/* Keyframe path for slow Ken Burns pan/zoom */
 @keyframes kenburns-pan {
   0% {
     opacity: 0;
@@ -857,6 +945,7 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* On smaller screens, increase gallery height so animations stay visible */
 @media (max-width: 768px) {
   .kenburns-gallery {
     height: clamp(580px, 82vw, 420px);
@@ -888,12 +977,14 @@ section#tjanster .lottie-wrapper {
   }
 }
 
+/* Centered wrapper holding a single testimonial card */
 .testimonial-carousel {
   display: flex;
   justify-content: center;
   margin-top: var(--space-lg);
 }
 
+/* Feature testimonial card with gradient glass aesthetic */
 .testimonial-card {
   position: relative;
   max-width: 640px;
@@ -911,6 +1002,7 @@ section#tjanster .lottie-wrapper {
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
+/* Animated glow accent behind testimonial content */
 .testimonial-card::before {
   content: "";
   position: absolute;
@@ -925,6 +1017,7 @@ section#tjanster .lottie-wrapper {
   pointer-events: none;
 }
 
+/* Lift card slightly on hover/focus for feedback */
 .testimonial-card:hover,
 .testimonial-card:focus-visible {
   transform: translateY(-6px);
@@ -936,17 +1029,20 @@ section#tjanster .lottie-wrapper {
   outline-offset: 4px;
 }
 
+/* Oversized quote icon above rotating text */
 .testimonial-card__icon {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   color: rgba(193, 106, 74, 0.7);
   margin-bottom: var(--space-sm);
 }
 
+/* Keep content above decorative layers */
 .testimonial-card__content {
   position: relative;
   z-index: 1;
 }
 
+/* Quote text stack set up for crossfade animation */
 .testimonial-card__quote {
   margin: 0 0 var(--space-sm);
   display: grid;
@@ -957,6 +1053,7 @@ section#tjanster .lottie-wrapper {
   min-height: clamp(90px, 20vw, 120px);
 }
 
+/* Each quote fades/slides using testimonialCycle */
 .testimonial-card__quote-item {
   grid-area: 1 / 1;
   opacity: 0;
@@ -965,6 +1062,7 @@ section#tjanster .lottie-wrapper {
   animation-fill-mode: forwards;
 }
 
+/* Author name pairs with quote animations */
 .testimonial-card__author {
   margin: 0;
   display: grid;
@@ -973,6 +1071,7 @@ section#tjanster .lottie-wrapper {
   min-height: 1.5em;
 }
 
+/* Sync author animation timing with quote */
 .testimonial-card__author-item {
   grid-area: 1 / 1;
   opacity: 0;
@@ -981,6 +1080,7 @@ section#tjanster .lottie-wrapper {
   animation-fill-mode: forwards;
 }
 
+/* Dot progress indicator for the rotating quotes */
 .testimonial-card__progress {
   position: relative;
   display: inline-flex;
@@ -991,6 +1091,7 @@ section#tjanster .lottie-wrapper {
   z-index: 1;
 }
 
+/* Individual dot pulses when its quote is active */
 .testimonial-card__dot {
   width: 10px;
   height: 10px;
@@ -1000,6 +1101,7 @@ section#tjanster .lottie-wrapper {
   animation: testimonialDot 36s ease-in-out infinite;
 }
 
+/* Align quote, author, and dot timelines */
 .testimonial-card__quote-item:nth-child(1),
 .testimonial-card__author-item:nth-child(1),
 .testimonial-card__dot:nth-child(1) {
@@ -1037,11 +1139,13 @@ section#tjanster .lottie-wrapper {
 }
 
 
+/* FAQ accordion list */
 .faq {
   display: grid;
   gap: var(--space-sm);
 }
 
+/* Card styling for each question/answer */
 .faq details {
   background-color: var(--color-surface);
   border-radius: var(--radius-base);
@@ -1049,6 +1153,7 @@ section#tjanster .lottie-wrapper {
   box-shadow: var(--shadow-soft);
 }
 
+/* Contact/lead form container */
 .lead-form {
   display: grid;
   gap: var(--space-sm);
@@ -1058,11 +1163,13 @@ section#tjanster .lottie-wrapper {
   box-shadow: var(--shadow-soft);
 }
 
+/* Bolden labels for clarity */
 .lead-form label {
   font-weight: 600;
   color: var(--color-text-primary);
 }
 
+/* Shared field styling for inputs and textarea */
 .lead-form input,
 .lead-form textarea {
   width: 100%;
@@ -1073,37 +1180,45 @@ section#tjanster .lottie-wrapper {
   font-size: 1rem;
 }
 
+/* Allow text area to grow while keeping sensible minimum */
 .lead-form textarea {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Legal copy beneath the form */
 .lead-form__agreement {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
 }
 
+/* Footer baseline spacing and muted palette */
 .footer {
   padding: var(--space-lg) 0;
   color: var(--color-text-secondary);
   font-size: 0.875rem;
 }
 
+/* Footer logotype styling */
 .footer__brand {
   font-family: var(--font-heading);
   color: var(--color-text-primary);
 }
 
+/* Tablet+ adjustments for cards and process layout */
 @media (min-width: 768px) {
+  /* Lay cards out in three columns when space allows */
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* Convert process list into equal-width columns */
   .process {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border: none;
   }
 
+  /* Switch to top border for horizontal timeline */
   .process__item {
     border-left: none;
     border-top: 2px solid var(--color-neutral);

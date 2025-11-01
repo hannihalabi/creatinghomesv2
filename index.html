@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
+    <!-- Metadata och SEO-inställningar för sidan -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -11,6 +12,7 @@
       name="description"
       content="Creating Homes hjälper dig med personlig interior styling och heminredning som förhöjer värdet på din bostad. Boka en kostnadsfri konsultation redan idag."
     />
+    <!-- Förladdning av externa typsnitt och övergripande stilmallar -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,11 +22,13 @@
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="styles/components.css" />
+    <!-- Laddar Lottie-komponenten som används i sektionerna längre ned -->
     <script
       type="module"
       src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
     ></script>
     <link rel="canonical" href="https://creatinghomes.se/" />
+    <!-- Open Graph-data för social delning -->
     <meta property="og:title" content="Creating Homes – Premium interior styling" />
     <meta
       property="og:description"
@@ -33,6 +37,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="pics/spacejoy-KSfe2Z4REEM-unsplash.jpg" />
     <meta property="og:locale" content="sv_SE" />
+    <!-- Strukturerad data för sökmotorer -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -61,9 +66,12 @@
     </script>
   </head>
   <body id="top">
+    <!-- Skip-länk som ger tangentbordsanvändare snabb åtkomst till huvudinnehåll -->
     <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+    <!-- Heroavsnitt med navigation, video och huvudbudskap -->
     <header class="hero-section">
       <div class="site-header">
+        <!-- Toppnavigation med logotyp och responsiv meny -->
         <div class="container site-header__inner">
           <div class="site-header__bar">
             <a class="site-header__brand" href="#top">Creating Homes</a>
@@ -83,6 +91,7 @@
               <span class="visually-hidden">Visa eller dölj huvudmenyn</span>
             </button>
           </div>
+          <!-- Huvudnavigation med ankarlänkar till respektive sektion -->
           <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
             <ul class="site-nav__list">
               <li class="site-nav__item">
@@ -111,13 +120,13 @@
         </div>
       </div>
       <div class="hero">
+        <!-- Bakgrundsvideo som skapar stämning -->
         <div class="hero__background" aria-hidden="true">
           <video
             autoplay
             muted
             loop
             playsinline
-            poster="pics/spacejoy-KSfe2Z4REEM-unsplash.jpg"
             preload="metadata"
           >
             <source
@@ -126,11 +135,14 @@
             />
           </video>
         </div>
+        <!-- Overlay för att säkerställa god kontrast -->
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="container">
           <div class="hero__content">
+            <!-- Textinnehållet som presenterar erbjudandet -->
             <span class="badge">Interior styling</span>
             <h1>Skapa hem som känns lika bra som de ser ut</h1>
+            <!-- Roterande budskap som beskriver levererade värden -->
             <p class="hero__message">
               <span class="hero__message-item">
                 Vi hjälper bostadsägare och företag att forma miljöer med balans
@@ -147,6 +159,7 @@
                 helhetsupplevelsen, från första intryck till avslutad affär.
               </span>
             </p>
+            <!-- Call-to-action-länkar för kontakt och portfolio -->
             <div class="hero__actions">
               <a class="cta" href="#kontakt" data-cta="hero-primary">
                 Boka kostnadsfri konsultation
@@ -160,7 +173,9 @@
       </div>
     </header>
 
+    <!-- Huvudinnehåll med sektioner om erbjudande, arbetssätt och kontakt -->
     <main id="main-content">
+      <!-- Sektion som presenterar kärntjänster och erbjudanden -->
       <section class="section section--alt" id="tjanster">
         <div class="container">
           <h2>Inredning med tydligt resultat</h2>
@@ -169,6 +184,7 @@
             att maximera försäljningen vid styling inför visning, skapar vi en
             lösning som speglar er identitet.
           </p>
+          <!-- Lottie-animation som förstärker sektionens tema -->
           <div class="lottie-wrapper">
             <dotlottie-wc
               src="https://lottie.host/773eb098-d4c5-496c-b3e3-dba1918d2b4c/dSCU6oOY7b.lottie"
@@ -177,6 +193,7 @@
               loop
             ></dotlottie-wc>
           </div>
+          <!-- Kort som beskriver respektive tjänsteområde -->
           <div class="cards">
             <article class="card">
               <div class="card__header">
@@ -212,6 +229,7 @@
         </div>
       </section>
 
+      <!-- Sektion som beskriver arbetsprocessen steg för steg -->
       <section class="section section--light" id="process">
         <div class="container">
           <h2>Så arbetar vi tillsammans</h2>
@@ -238,6 +256,7 @@
               </p>
             </article>
           </div>
+          <!-- Animation som illustrerar arbetsflödet -->
           <div class="lottie-wrapper">
             <dotlottie-wc
               src="https://lottie.host/a5085a4a-2759-461b-866a-913cb4f3e869/zqAT8UHCd4.lottie"
@@ -249,6 +268,7 @@
         </div>
       </section>
 
+      <!-- Sektion med portfolio och bildspel som visar tidigare projekt -->
       <section class="section section--alt" id="portfolio">
         <div class="container">
           <h2>Känn en upplevelse - inte bara ett visuellt intryck</h2>
@@ -309,8 +329,10 @@
         </div>
       </section>
 
+      <!-- Sektion med kundomdömen för social proof -->
       <section class="section section--light" id="testimonials">
         <div class="container">
+          <!-- Cyklande citat som visar kundernas röster -->
           <div class="testimonial-carousel" aria-live="polite" aria-atomic="true">
             <article class="testimonial-card" tabindex="0">
               <div class="testimonial-card__icon" aria-hidden="true">❝</div>
@@ -357,6 +379,7 @@
         </div>
       </section>
 
+      <!-- Sektion som presenterar teamet och deras bakgrund -->
       <section class="section section--alt" id="om-oss">
         <div class="container about-section">
           <div class="about-intro">
@@ -373,6 +396,7 @@
             </p>
           </div>
           <div class="team-profiles" role="list">
+            <!-- Individuella presentationer av teammedlemmarna -->
             <article class="team-member" role="listitem">
               <div class="team-member__media">
                 <img
@@ -417,9 +441,11 @@
         </div>
       </section>
 
+      <!-- Sektion med vanliga frågor och svar -->
       <section class="section section--light" id="faq">
         <div class="container">
           <h2>Vanliga frågor</h2>
+          <!-- FAQ-accordion som svarar på återkommande frågor -->
           <div class="faq">
             <details>
               <summary>Hur lång tid tar ett stylinguppdrag?</summary>
@@ -453,20 +479,24 @@
         </div>
       </section>
 
+      <!-- Sektion för kontaktinformation och lead-formulär -->
       <section class="section section--alt" id="kontakt">
         <div class="container layout-two-column">
           <div>
+            <!-- Text som beskriver värdet av att boka konsultation -->
             <h2>Kostnadsfri konsultation</h2>
             <p>
               Fyll i dina uppgifter så återkommer vi inom 24 timmar med förslag på
               tid. Berätta gärna kort om projektet.
             </p>
+            <!-- Snabb lista med fördelar som stärker erbjudandet -->
             <ul>
               <li>Stylingteam med dokumenterade resultat</li>
               <li>Transparent prissättning och projektledning</li>
               <li>Hållbart urval av material och leverantörer</li>
             </ul>
           </div>
+          <!-- Lead-formulär som samlar in kontaktuppgifter -->
           <form class="lead-form" data-lead-form>
             <label for="name">Namn</label>
             <input id="name" name="name" type="text" required />
@@ -488,6 +518,7 @@
       </section>
     </main>
 
+    <!-- Footer med varumärke och aktuell upphovsrätt -->
     <footer class="footer section--light">
       <div class="container">
         <strong class="footer__brand">Creating Homes</strong>
@@ -495,12 +526,16 @@
       </div>
     </footer>
 
+    <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>
+    <!-- Inlinelogik för årtalsuppdatering och mobilnavigation -->
     <script>
+      // Uppdaterar årtalet i footern dynamiskt
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
       (function () {
+        // Hämtar referenser till navigation och menytoggle
         const navToggle = document.querySelector("[data-nav-toggle]");
         const nav = document.getElementById("site-nav");
         const siteHeader = document.querySelector(".site-header");
@@ -511,12 +546,14 @@
 
         const mobileQuery = window.matchMedia("(max-width: 900px)");
 
+        // Öppnar mobilenyn och markerar korrekt aria-state
         const openMenu = () => {
           navToggle.setAttribute("aria-expanded", "true");
           nav.classList.add("is-open");
           nav.hidden = false;
         };
 
+        // Stänger mobilenyn och återställer fokus vid behov
         const closeMenu = ({ restoreFocus = false } = {}) => {
           navToggle.setAttribute("aria-expanded", "false");
           nav.classList.remove("is-open");
@@ -543,6 +580,7 @@
         navToggle.hidden = false;
         siteHeader.classList.add("site-header--menu-ready");
 
+        // Växlar meny när användaren klickar på hamburgaren
         navToggle.addEventListener("click", () => {
           const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
           if (isExpanded) {
@@ -552,6 +590,7 @@
           }
         });
 
+        // Stänger menyn när en nav-länk valts i mobilen
         nav.addEventListener("click", (event) => {
           if (
             event.target instanceof Element &&
@@ -562,6 +601,7 @@
           }
         });
 
+        // Låter Escape stänga menyn och återställa fokus
         document.addEventListener("keydown", (event) => {
           if (
             event.key === "Escape" &&
@@ -571,12 +611,14 @@
           }
         });
 
+        // Synkar visible state när viewportens bredd förändras
         if (typeof mobileQuery.addEventListener === "function") {
           mobileQuery.addEventListener("change", syncVisibility);
         } else if (typeof mobileQuery.addListener === "function") {
           mobileQuery.addListener(syncVisibility);
         }
 
+        // Initierar korrekt visningsläge vid sidladdning
         syncVisibility();
       })();
     </script>
