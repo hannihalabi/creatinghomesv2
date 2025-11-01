@@ -2,8 +2,16 @@
 (function () {
   const MEASUREMENT_ID = "G-XXXXXXX"; // ersätt med faktisk GA4-ID
 
+  function isMeasurementConfigured() {
+    return (
+      typeof MEASUREMENT_ID === "string" &&
+      MEASUREMENT_ID.length > 0 &&
+      !/XXXXXXX/.test(MEASUREMENT_ID)
+    );
+  }
+
   function loadGA() {
-    if (window.gtag) return;
+    if (!isMeasurementConfigured() || window.gtag) return;
 
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -45,21 +53,27 @@
     if (!form) return;
 
     form.addEventListener("submit", (event) => {
-      event.preventDefault();
       trackEvent("lead_submit", {
         event_category: "conversion",
         event_label: "lead-form",
       });
 
-      form.reset();
-      const existingStatus = form.querySelector("[role='status']");
-      if (existingStatus) {
-        existingStatus.remove();
+      const action = form.getAttribute("action");
+      const shouldHandleClientSide =
+        !action || action.trim() === "" || action.trim() === "#";
+
+      if (shouldHandleClientSide) {
+        event.preventDefault();
+        form.reset();
+        const existingStatus = form.querySelector("[role='status']");
+        if (existingStatus) {
+          existingStatus.remove();
+        }
+        form.insertAdjacentHTML(
+          "beforeend",
+          '<p role="status">Tack! Vi återkommer inom kort.</p>'
+        );
       }
-      form.insertAdjacentHTML(
-        "beforeend",
-        '<p role="status">Tack! Vi återkommer inom kort.</p>'
-      );
     });
   }
 

@@ -1097,7 +1097,4 @@ section#tjanster .lottie-wrapper {
     padding-top: var(--space-sm);
   }
 
-  .gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }

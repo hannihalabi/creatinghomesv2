@@ -2,7 +2,6 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -21,6 +20,10 @@
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="styles/components.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+    ></script>
     <link rel="canonical" href="https://creatinghomes.se/" />
     <meta property="og:title" content="Creating Homes – Premium interior styling" />
     <meta
@@ -115,7 +118,7 @@
             loop
             playsinline
             poster="pics/spacejoy-KSfe2Z4REEM-unsplash.jpg"
-            preload="auto"
+            preload="metadata"
           >
             <source
               src="video/7578552-uhd_3840_2160_30fps.mp4"
@@ -128,7 +131,7 @@
           <div class="hero__content">
             <span class="badge">Interior styling</span>
             <h1>Skapa hem som känns lika bra som de ser ut</h1>
-            <p class="hero__message" aria-live="polite">
+            <p class="hero__message">
               <span class="hero__message-item">
                 Vi hjälper bostadsägare och företag att forma miljöer med balans
                 mellan funktion och personlighet. Varje projekt är kuraterat med
@@ -167,10 +170,6 @@
             lösning som speglar er identitet.
           </p>
           <div class="lottie-wrapper">
-            <script
-              src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
-              type="module"
-            ></script>
             <dotlottie-wc
               src="https://lottie.host/773eb098-d4c5-496c-b3e3-dba1918d2b4c/dSCU6oOY7b.lottie"
               style="width: 300px; height: 300px"
@@ -378,7 +377,7 @@
               <div class="team-member__media">
                 <img
                   src="pics/1%20evelinas%20bild%202.avif"
-                  alt="Porträtt av Teresia, medgrundare och kreativ chef på Creating Homes"
+                  alt="Porträtt av Evelina, medgrundare och kreativ chef på Creating Homes"
                   loading="lazy"
                   width="320"
                   height="400"
@@ -392,15 +391,13 @@
                   tydlig berättelse. Hennes bakgrund inom inredningsarkitektur och varumärkes-
                   upplevelser hjälper kunder att skapa miljöer med stark identitet.
                 </p>
-                <ul>
-                </ul>
               </div>
             </article>
             <article class="team-member" role="listitem">
               <div class="team-member__media">
                 <img
                   src="pics/2%20teresias%20bild.avif"
-                  alt="Porträtt av Evelina, medgrundare och projektledare på Creating Homes"
+                  alt="Porträtt av Teresia, medgrundare och projektledare på Creating Homes"
                   loading="lazy"
                   width="320"
                   height="400"
@@ -414,8 +411,6 @@
                   både bostadsutveckling och kommersiella miljöer bygger hon team, tidsplaner
                   och budgetar som håller – utan att kompromissa med detaljerna.
                 </p>
-                <ul>
-                </ul>
               </div>
             </article>
           </div>
