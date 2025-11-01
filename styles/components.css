@@ -1,6 +1,6 @@
 /* Hero wrapper that keeps the video section snug against following content */
 .hero-section {
-  padding: 0 0 var(--space-xl);
+  padding: 0 0 var(--space-sm);
 }
 
 /* Transparent header that floats above the hero background media */
