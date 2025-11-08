@@ -1,12 +1,12 @@
 /* Basvariabler och grundtypografi för Creating Homes */
 :root {
-  --color-background: #f8f6f3;
+  --color-background: #d5c1b0; /* Patagonia Roman Clay */
   --color-surface: #ffffff;
   --color-text-primary: #414141;
   --color-text-secondary: #6b6b6b;
   --color-text-inverse: #ffffff;
-  --color-accent: #c16a4a;
-  --color-accent-strong: #a3563b;
+  --color-accent: #59665c; /* Card Room Green */
+  --color-accent-strong: #4d1f23; /* Be Witched */
   --color-neutral: #e5ded8;
   --color-hero-heading: #f6f3f1;
 

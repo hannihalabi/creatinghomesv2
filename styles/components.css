@@ -21,7 +21,7 @@
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
   border-radius: calc(var(--radius-base) * 1.2);
-  background: rgba(37, 27, 23, 0.55);
+  background: rgba(47, 74, 92, 0.85); /* Hague Blue */
   backdrop-filter: blur(18px);
   color: var(--color-text-inverse);
   pointer-events: auto;
@@ -39,10 +39,10 @@
 .site-header__brand {
   font-family: var(--font-heading);
   font-size: 1.125rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-background);
   white-space: nowrap;
 }
 
@@ -199,7 +199,7 @@
     margin: 0;
     padding: var(--space-xs);
     border-radius: calc(var(--radius-base) * 0.9);
-    background: rgba(37, 27, 23, 0.88);
+    background: rgba(47, 74, 92, 0.95); /* Hague Blue */
     box-shadow: var(--shadow-soft);
   }
 
@@ -685,9 +685,10 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.75rem;
+  margin-bottom: 1rem;
   border-radius: 999px;
-  background-color: rgba(193, 106, 74, 0.12);
-  color: var(--color-accent);
+  background-color: var(--color-accent-strong);
+  color: var(--color-background);
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
