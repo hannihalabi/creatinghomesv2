@@ -1,6 +1,6 @@
 /* Base vertical rhythm for section blocks */
 .section {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg);
 }
 
 /* Section background modifiers */
@@ -29,6 +29,6 @@
 @media (min-width: 1024px) {
   /* Slightly increase section padding on wider screens */
   .section {
-    padding-block: calc(var(--space-xl) * 1.2);
+    padding-block: calc(var(--space-lg) * 1.2);
   }
 }

@@ -72,22 +72,35 @@
             <!-- Toppnavigation med logotyp och responsiv meny -->
             <div class="container site-header__inner">
               <div class="site-header__bar">
-                <a class="site-header__brand" href="#top">CREATING HOMES STHLM AB</a>
-            <button
-              class="site-nav__toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="site-nav"
-              hidden
-              data-nav-toggle
-            >
-              <span class="site-nav__toggle-bars" aria-hidden="true">
-                <span class="site-nav__toggle-bar"></span>
-                <span class="site-nav__toggle-bar"></span>
-                <span class="site-nav__toggle-bar"></span>
-              </span>
-              <span class="visually-hidden">Visa eller dölj huvudmenyn</span>
-            </button>
+                <a class="site-header__brand" href="#top">
+                  <video
+                    class="site-header__logo-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-hidden="true"
+                  >
+                    <source src="AI-videos/media.mp4" type="video/mp4" />
+                  </video>
+                  <span class="site-header__brand-text">Creating Homes STHLM AB</span>
+                </a>
+                <button
+                  class="site-nav__toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="site-nav"
+                  hidden
+                  data-nav-toggle
+                >
+                  <span class="site-nav__toggle-bars" aria-hidden="true">
+                    <span class="site-nav__toggle-bar"></span>
+                    <span class="site-nav__toggle-bar"></span>
+                    <span class="site-nav__toggle-bar"></span>
+                  </span>
+                  <span class="visually-hidden">Visa eller dölj huvudmenyn</span>
+                </button>
           </div>
           <!-- Huvudnavigation med ankarlänkar till respektive sektion -->
           <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
@@ -121,11 +134,23 @@
         <!-- Bakgrundsvideo som skapar stämning -->
         <div class="hero__background" aria-hidden="true">
           <video
+            class="hero-video hero-video--intro hero-video--intro-primary is-visible"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            data-hero-intro-primary
+          >
+            <source src="AI-videos/video4.mp4" type="video/mp4" />
+          </video>
+          <video
+            class="hero-video hero-video--main"
             autoplay
             muted
             loop
             playsinline
             preload="metadata"
+            data-hero-main
           >
             <source
               src="video/7578552-uhd_3840_2160_30fps.mp4"
@@ -139,7 +164,8 @@
           <div class="hero__content">
             <!-- Textinnehållet som presenterar erbjudandet -->
             <span class="badge">Interior styling</span>
-            <h1>Skapa hem som känns lika bra som de ser ut</h1>
+            <!-- <h1>Skapa hem som känns lika bra som de ser ut</h1> -->
+             <h1>Förvandla ditt hem till en dröm</h1>
             <!-- Roterande budskap som beskriver levererade värden -->
             <p class="hero__message">
               <span class="hero__message-item">
@@ -176,34 +202,39 @@
       <!-- Sektion som presenterar kärntjänster och erbjudanden -->
       <section class="section section--alt" id="tjanster">
         <div class="container">
-          <h2>Inredning med tydligt resultat</h2>
-          <p>
+          <h2 data-animate="fade-up">Inredning med tydligt resultat</h2>
+          <p data-animate="fade-up">
             Oavsett om målet är ett harmoniskt hem eller
             att maximera försäljningen vid styling inför visning, skapar vi en
             lösning som speglar er identitet.
           </p>
-          <!-- Lottie-animation som förstärker sektionens tema -->
+          <!-- Video som förstärker sektionens tema -->
           <div class="lottie-wrapper">
-            <dotlottie-wc
-              src="https://lottie.host/773eb098-d4c5-496c-b3e3-dba1918d2b4c/dSCU6oOY7b.lottie"
-              style="width: 300px; height: 300px"
+            <video
+              class="section-media-video"
               autoplay
+              muted
               loop
-            ></dotlottie-wc>
+              playsinline
+              preload="metadata"
+              aria-hidden="true"
+            >
+              <source src="AI-videos/media.mp4" type="video/mp4" />
+            </video>
           </div>
           <!-- Kort som beskriver respektive tjänsteområde -->
-          <div class="cards">
-            <article class="card">
+          <div class="cards" data-animate="fade-up">
+            <article class="card" data-animate="fade-up">
               <div class="card__header">
                 <div class="card__icon">🏡</div>
                 <h3 class="card__title">Styling</h3>
               </div>
               <p>
                 Personligt koncept, färg- och materialval samt möblering som knyter
-                ihop rummen till en helhet.
+                ihop rummen till en helhet som ökar din bostadsförsäljning.
               </p>
             </article>
-            <article class="card">
+            <article class="card" data-animate="fade-up">
               <div class="card__header">
                 <div class="card__icon">📸</div>
                 <h3 class="card__title">Heminredning</h3>
@@ -213,16 +244,158 @@
                 köpare vid visning och fotografering.
               </p>
             </article>
-            <article class="card">
+            <article class="card" data-animate="fade-up">
               <div class="card__header">
                 <div class="card__icon">🏢</div>
                 <h3 class="card__title">Tilläggstjänster</h3>
               </div>
-              <p>
-                Skräddarsydda interiörer för kontor, showrooms och publika
-                ytor med fokus på varumärkesupplevelse.
-              </p>
+              <div class="team-story" data-sequence data-sequence-interval="6000" aria-live="polite">
+                <div class="team-story__slide is-active" data-sequence-step>
+                  <p>
+                    <strong>Hjälp med packning:</strong> Vi packar ner bostaden strukturerat så att
+                    flytten går smidigt och ingenting skadas längs vägen.
+                  </p>
+                </div>
+                <div class="team-story__slide" data-sequence-step>
+                  <p>
+                    <strong>RUT-tjänster:</strong> Samordnad städning och flytthjälp genom betrodda
+                    partners, med full koll på avdrag och tidsplan.
+                  </p>
+                </div>
+                <div class="team-story__slide" data-sequence-step>
+                  <p>
+                    <strong>Magasinering:</strong> Trygg förvaring av möbler och dekor så att hemmet
+                    hålls avskalat tills det är dags för inflytt eller ny styling.
+                  </p>
+                </div>
+                <div class="team-story__dots" role="group" aria-label="Tilläggstjänster">
+                  <button
+                    type="button"
+                    class="team-story__dot is-active"
+                    data-sequence-dot="0"
+                    aria-label="Visa text 1"
+                  ></button>
+                  <button
+                    type="button"
+                    class="team-story__dot"
+                    data-sequence-dot="1"
+                    aria-label="Visa text 2"
+                  ></button>
+                  <button
+                    type="button"
+                    class="team-story__dot"
+                    data-sequence-dot="2"
+                    aria-label="Visa text 3"
+                  ></button>
+                </div>
+              </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galleri -->
+      <section class="section section--light section--gallery" id="galleri">
+        <div class="container">
+          <div class="gallery-header" data-animate="fade-up">
+          </div>
+          <div class="media-gallery" data-gallery data-gallery-interval="6500" data-animate="fade-up">
+            <div class="media-gallery__controls" aria-label="Navigera i galleriet">
+              <button
+                class="media-gallery__btn"
+                type="button"
+                data-gallery-prev
+                aria-label="Föregående media"
+              >
+                ‹
+              </button>
+              <button
+                class="media-gallery__btn"
+                type="button"
+                data-gallery-next
+                aria-label="Nästa media"
+              >
+                ›
+              </button>
+            </div>
+            <div class="media-gallery__viewport">
+              <div
+                class="media-gallery__track"
+                role="list"
+                aria-label="Videoexempel från Creating Homes"
+              >
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video1.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video2.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video3.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video4.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video5.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video6.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+                <figure class="media-gallery__item media-gallery__item--vertical" data-gallery-slide role="listitem">
+                  <video
+                    src="AI-videos/video7.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="metadata"
+                  ></video>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -232,28 +405,28 @@
         <div class="container">
           <h2>Så arbetar vi tillsammans</h2>
           <div class="process">
-            <article class="process__item">
+            <article class="process__item" data-animate="fade-up">
               <h3>1. Konsultation</h3>
               <p>
                 Vi analyserar behov, budget och stilpreferenser. Digitalt eller
                 på plats, helt kostnadsfritt.
               </p>
             </article>
-            <article class="process__item">
+            <article class="process__item" data-animate="fade-up">
               <h3>2. Offert</h3>
               <p>
                 Moodboards, färgpalett, möbelförslag och visualiseringar. Allt
                 samlat i en tydlig plan för godkännande.
               </p>
             </article>
-            <article class="process__item">
+            <article class="process__item" data-animate="fade-up">
               <h3>3. Planering</h3>
               <p>
                 Vi sätter tidslinjer, bokar leverantörer och säkerställer att varje detalj är
                 förberedd innan start – från logistik till materialval.
               </p>
             </article>
-            <article class="process__item">
+            <article class="process__item" data-animate="fade-up">
               <h3>4. Genomförande</h3>
               <p>
                 Vi koordinerar beställningar, leverans och styling på plats så att
@@ -261,26 +434,18 @@
               </p>
             </article>
           </div>
-          <!-- Animation som illustrerar arbetsflödet -->
-          <div class="lottie-wrapper">
-            <dotlottie-wc
-              src="https://lottie.host/a5085a4a-2759-461b-866a-913cb4f3e869/zqAT8UHCd4.lottie"
-              style="width: 300px; height: 300px"
-              autoplay
-              loop
-            ></dotlottie-wc>
-          </div>
         </div>
       </section>
 
       <!-- Sektion med portfolio och bildspel som visar tidigare projekt -->
       <section class="section section--alt" id="portfolio">
         <div class="container">
-          <h2>Stick ut istället för att smälta in</h2>
+          <!-- <h2 data-animate="fade-up">Vi förvandlar ditt hem till köparens dröm</h2> -->
           <div
             class="kenburns-gallery"
             role="group"
             aria-label="Visuellt bildspel med utvalda projekt från Creating Homes"
+            data-animate="fade-up"
           >
             <figure class="kenburns-gallery__item">
               <img
@@ -457,49 +622,26 @@
       <!-- Sektion med kundomdömen för social proof -->
       <section class="section section--light" id="testimonials">
         <div class="container">
-          <!-- Cyklande citat som visar kundernas röster -->
-          <div class="testimonial-carousel" aria-live="polite" aria-atomic="true">
-            <article class="testimonial-card" tabindex="0">
-              <div class="testimonial-card__icon" aria-hidden="true">❝</div>
-              <div class="testimonial-card__content">
-                <p class="testimonial-card__quote">
-                  <span class="testimonial-card__quote-item">
-                    “Hemmet känns som nytt igen – varje detalj träffade helt rätt.”
-                  </span>
-                  <span class="testimonial-card__quote-item">
-                    “Vi sålde över utgångspris efter stylingen och fick fantastiskt gensvar.”
-                  </span>
-                  <span class="testimonial-card__quote-item">
-                    “Teamet tog våra idéer och lyfte dem till något vi aldrig vågat drömma om.”
-                  </span>
-                  <span class="testimonial-card__quote-item">
-                    “Processen var enkel, proffsig och sparade oss massor av tid.”
-                  </span>
-                  <span class="testimonial-card__quote-item">
-                    “Våra kunder älskar känslan i showroomet – försäljningen ökade direkt.”
-                  </span>
-                  <span class="testimonial-card__quote-item">
-                    “Skapade ett välkomnande kontor som ger energi varje dag.”
-                  </span>
-                </p>
-                <p class="testimonial-card__author">
-                  <span class="testimonial-card__author-item">— Sofia & Mattias, Bromma</span>
-                  <span class="testimonial-card__author-item">— Elin, Vasastan</span>
-                  <span class="testimonial-card__author-item">— Marcus & Lena, Enskede</span>
-                  <span class="testimonial-card__author-item">— Mikael, Projektledare</span>
-                  <span class="testimonial-card__author-item">— Ida, Retail Manager</span>
-                  <span class="testimonial-card__author-item">— Caroline, HR-chef</span>
-                </p>
-              </div>
-              <div class="testimonial-card__progress" aria-hidden="true">
-                <span class="testimonial-card__dot"></span>
-                <span class="testimonial-card__dot"></span>
-                <span class="testimonial-card__dot"></span>
-                <span class="testimonial-card__dot"></span>
-                <span class="testimonial-card__dot"></span>
-                <span class="testimonial-card__dot"></span>
-              </div>
-            </article>
+          <h2>Kundomdömen från Reco</h2>
+          <div class="testimonial-widget testimonial-widget--desktop">
+            <iframe
+              src="https://widget.reco.se/v2/venues/4043941/horizontal/xlarge?inverted=false&border=true&lang=sv"
+              title="Creating Homes STHLM - Omdömen på Reco"
+              height="225"
+              style="width:100%;border:0;display:block;overflow:hidden;"
+              data-reactroot
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="testimonial-widget testimonial-widget--mobile">
+            <iframe
+              src="https://widget.reco.se/v2/venues/4043941/vertical/large?inverted=false&border=true&lang=sv&reviews=5"
+              title="Creating Homes STHLM - Omdömen på Reco"
+              height="985"
+              style="width:300px;border:0;display:block;overflow:hidden;"
+              data-reactroot
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -509,20 +651,45 @@
         <div class="container about-section">
           <div class="about-intro">
             <h2>Inredningsarkitekter med känsla för detaljer</h2>
-            <p>
-              Creating Homes leds av stylistteamet Teresia och Evelina. Tillsammans
-              väver de samman estetik, beteendepsykologi och hållbar sourcing för att skapa
-              miljöer med lång livslängd.
-            </p>
-            <p>
-              Med över hundra genomförda projekt i Hemnet-toppar och prisade kontorsmiljöer
-              vet teamet vad som gör verklig skillnad – från första moodboard till sista
-              stiliserade detalj.
-            </p>
+            <div
+              class="team-story about-story"
+              data-sequence
+              data-sequence-interval="9000"
+              aria-live="polite"
+            >
+              <div class="team-story__slide is-active" data-sequence-step>
+                <p>
+                  Creating Homes leds av stylistteamet Teresia och Evelina. Tillsammans
+                  väver de samman estetik, beteendepsykologi och hållbar sourcing för att skapa
+                  miljöer med lång livslängd.
+                </p>
+              </div>
+              <div class="team-story__slide" data-sequence-step>
+                <p>
+                  Med över hundra genomförda projekt i Hemnet-toppar och prisade kontorsmiljöer
+                  vet teamet vad som gör verklig skillnad – från första moodboard till sista
+                  stiliserade detalj.
+                </p>
+              </div>
+              <div class="team-story__dots" role="group" aria-label="Om Creating Homes fakta">
+                <button
+                  type="button"
+                  class="team-story__dot is-active"
+                  data-sequence-dot="0"
+                  aria-label="Visa text 1"
+                ></button>
+                <button
+                  type="button"
+                  class="team-story__dot"
+                  data-sequence-dot="1"
+                  aria-label="Visa text 2"
+                ></button>
+              </div>
+            </div>
           </div>
           <div class="team-profiles" role="list">
             <!-- Individuella presentationer av teammedlemmarna -->
-            <article class="team-member" role="listitem">
+            <article class="team-member" role="listitem" data-animate="fade-up">
               <div class="team-member__media">
                 <img
                   src="pics/Portratis/evelina.jpg"
@@ -535,14 +702,45 @@
               <div class="team-member__content">
                 <h3>Evelina</h3>
                 <p class="team-member__role">Medgrundare &amp; Kreativ chef</p>
-                <p>
-                  Evelina leder det kreativa uttrycket och säkerställer att varje projekt bär en
-                  tydlig berättelse. Hennes bakgrund inom inredningsarkitektur och varumärkes-
-                  upplevelser hjälper kunder att skapa miljöer med stark identitet.
-                </p>
+                <div
+                  class="team-story"
+                  data-sequence
+                  data-sequence-interval="8000"
+                  aria-live="polite"
+                >
+                  <div class="team-story__slide is-active" data-sequence-step>
+                    <p>
+                      Med utbildning och bakgrund som inredare och butikskommunikatör har Evelina
+                      lång erfarenhet av att skapa vackra, funktionella och personliga miljöer. Hon
+                      brinner för att lyfta fram varje rums unika möjligheter och skapa en helhet
+                      som känns både harmonisk och inspirerande.
+                    </p>
+                  </div>
+                  <div class="team-story__slide" data-sequence-step>
+                    <p>
+                      Som stylist är hon noggrann, lyhörd och har ett öga för detaljer som gör stor
+                      skillnad – oavsett om det handlar om att förnya ett hem, skapa en säljande
+                      bostadsstyling eller ge en butik nytt liv.
+                    </p>
+                  </div>
+                  <div class="team-story__dots" role="group" aria-label="Evelina presentation">
+                    <button
+                      type="button"
+                      class="team-story__dot is-active"
+                      data-sequence-dot="0"
+                      aria-label="Visa text 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="team-story__dot"
+                      data-sequence-dot="1"
+                      aria-label="Visa text 2"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </article>
-            <article class="team-member" role="listitem">
+            <article class="team-member" role="listitem" data-animate="fade-up">
               <div class="team-member__media">
                 <img
                   src="pics/Portratis/teresia.jpg"
@@ -555,14 +753,146 @@
               <div class="team-member__content">
                 <h3>Teresia</h3>
                 <p class="team-member__role">Medgrundare &amp; Projektledare</p>
-                <p>
-                  Teresia omvandlar visioner till välplanerade leveranser. Med erfarenhet från
-                  både bostadsutveckling och kommersiella miljöer bygger hon team, tidsplaner
-                  och budgetar som håller – utan att kompromissa med detaljerna.
-                </p>
+                <div
+                  class="team-story"
+                  data-sequence
+                  data-sequence-interval="9000"
+                  aria-live="polite"
+                >
+                  <div class="team-story__slide is-active" data-sequence-step>
+                    <p>
+                      För Teresia handlar styling om att skapa känsla och helhet. Med sin bakgrund
+                      som inredare och många års erfarenhet av homestyling vet hon hur man får ett
+                      rum att nå sin fulla potential. Hon är känd för sin händighet och sin
+                      fingertoppskänsla för stilleben – de små detaljerna som gör den stora
+                      skillnaden.
+                    </p>
+                  </div>
+                  <div class="team-story__slide" data-sequence-step>
+                    <p>
+                      Som belysningsexpert vet hon exakt hur ljuset kan förvandla en miljö och lyfta
+                      fram hemmets bästa sidor.
+                    </p>
+                    <p>
+                      Teresia är ansvarig för kundkontakt och ser till att varje kund känner sig
+                      trygg genom hela processen.
+                    </p>
+                  </div>
+                  <div class="team-story__dots" role="group" aria-label="Teresia presentation">
+                    <button
+                      type="button"
+                      class="team-story__dot is-active"
+                      data-sequence-dot="0"
+                      aria-label="Visa text 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="team-story__dot"
+                      data-sequence-dot="1"
+                      aria-label="Visa text 2"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <!-- Prislista för styling inför försäljning -->
+      <section class="section section--light" id="prislista">
+        <div class="container pricing">
+          <div class="pricing__intro" data-animate="fade-up">
+            <h2>Styling inför försäljning</h2>
+            <p>
+              Välj den nivå som passar bostaden bäst – från helhetslösning i tomma hem till en
+              lätt uppfräschning i redan möblerade bostäder.
+            </p>
+          </div>
+          <div class="pricing-carousel" data-pricing-carousel data-animate="fade-up">
+            <div class="pricing-carousel__controls" aria-label="Navigera mellan stylingnivåer">
+              <button
+                class="pricing-carousel__btn"
+                type="button"
+                data-carousel-prev
+                aria-label="Visa föregående stylingnivå"
+              >
+                ‹
+              </button>
+              <button
+                class="pricing-carousel__btn"
+                type="button"
+                data-carousel-next
+                aria-label="Visa nästa stylingnivå"
+              >
+                ›
+              </button>
+            </div>
+            <div class="pricing-carousel__viewport">
+              <div class="pricing-carousel__track" role="list">
+                <article
+                  class="pricing-card pricing-card--full"
+                  role="listitem"
+                  data-carousel-slide
+                  data-animate="fade-up"
+                >
+                  <span class="pricing-card__eyebrow">Mest populär</span>
+                  <h3>Full styling</h3>
+                  <p>
+                    Vi förvandlar en tom bostad till ett inspirerande och inbjudande hem! Vi tillsätter
+                    komplett möblering, textilier, belysning och dekor som lyfter fram varje rums bästa
+                    egenskaper. Resultatet blir en välkomnande miljö som hjälper spekulanter att
+                    lättare föreställa sig hur det är att bo där.
+                  </p>
+                  <div class="pricing-card__meta">
+                    <span class="pricing-card__price">350–500 kr/kvm</span>
+                    <span class="pricing-card__minimum">Minimipris: 18&nbsp;000 kr</span>
+                  </div>
+                </article>
+                <article
+                  class="pricing-card pricing-card--medium"
+                  role="listitem"
+                  data-carousel-slide
+                  data-animate="fade-up"
+                >
+                  <h3>Medium styling</h3>
+                  <p>
+                    Vi lyfter bostadens potential genom att tillsätta noggrant utvalda möbler och
+                    dekorativa detaljer. Med rätt balans mellan befintlig inredning och kompletterande
+                    rekvisita skapar vi en genomtänkt och attraktiv helhet som tilltalar spekulanter.
+                  </p>
+                  <div class="pricing-card__meta">
+                    <span class="pricing-card__price">300–450 kr/kvm</span>
+                    <span class="pricing-card__minimum">Minimipris: 15&nbsp;000 kr</span>
+                  </div>
+                </article>
+                <article
+                  class="pricing-card pricing-card--light"
+                  role="listitem"
+                  data-carousel-slide
+                  data-animate="fade-up"
+                >
+                  <h3>Light styling</h3>
+                  <p>
+                    För det där lilla extra! Vi adderar utvalda textilier, växter och dekorativa
+                    detaljer som ger bostaden liv, värme och karaktär. Perfekt när grunden redan finns –
+                    vi lyfter helheten och skapar ett intryck som fastnar hos spekulanterna.
+                  </p>
+                  <div class="pricing-card__meta">
+                    <span class="pricing-card__price">250–300 kr/kvm</span>
+                    <span class="pricing-card__minimum">Minimipris: 12&nbsp;000 kr</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <p class="pricing-note">
+            <em>
+              Alla priser är cirkapriser. Slutligt pris beror på bostadens storlek, antal rum, skick,
+              planlösning, tillgång till hiss, transportmöjligheter samt eventuella uteplatser eller
+              balkonger.
+            </em>
+          </p>
         </div>
       </section>
 
@@ -573,10 +903,22 @@
           <!-- FAQ-accordion som svarar på återkommande frågor -->
           <div class="faq">
             <details>
+              <summary>Hur går processen till?</summary>
+              <p>
+                Se punkten <a href="#process">Processen</a> här på hemsidan där vi beskriver varje steg – från kostnadsfri konsultation till leverans.
+              </p>
+            </details>
+            <details>
               <summary>Hur lång tid tar ett stylinguppdrag?</summary>
               <p>
                 Mindre uppdrag genomförs på 2–4 veckor från briefing till styling
                 på plats. Större projekt planeras tillsammans med er tidsplan.
+              </p>
+            </details>
+            <details>
+              <summary>Hur mycket framförhållning behöver jag vid bokning?</summary>
+              <p>
+                Beroende på årstid krävs vanligtvis 1–4 veckor. Våren och perioden efter sommaren är högsäsong, och inför jul eller sommarledighet är det bra att vara ute i extra god tid.
               </p>
             </details>
             <details>
@@ -587,10 +929,22 @@
               </p>
             </details>
             <details>
+              <summary>Kan jag själv välja stylingpaket?</summary>
+              <p>
+                Efter konsultation landar vi i vad som ger bäst resultat för din bostad. Även befintliga möbler kan behöva bytas ut för att skapa rätt känsla, så ibland rekommenderar vi ett större paket trots att hemmet redan är möblerat.
+              </p>
+            </details>
+            <details>
               <summary>Vad kostar en konsultation?</summary>
               <p>
                 Första konsultationen är alltid kostnadsfri. Därefter lämnar vi
                 offert baserat på omfattning.
+              </p>
+            </details>
+            <details>
+              <summary>Vad kostar en styling?</summary>
+              <p>
+                Efter konsultation får du en offert. Priset påverkas av bostadens storlek, stylingens omfattning, antal trappor, om det finns hiss, läget och andra logistiska faktorer.
               </p>
             </details>
             <details>
@@ -607,7 +961,7 @@
       <!-- Sektion för kontaktinformation och lead-formulär -->
       <section class="section section--alt" id="kontakt">
         <div class="container layout-two-column">
-          <div>
+          <div data-animate="fade-up">
             <!-- Text som beskriver värdet av att boka konsultation -->
             <h2>Kostnadsfri konsultation</h2>
             <p>
@@ -620,9 +974,15 @@
               <li>Transparent prissättning och projektledning</li>
               <li>Hållbart urval av material och leverantörer</li>
             </ul>
+            <p>
+              <strong>E-post:</strong>
+              <a href="mailto:info@creatinghomes.se">info@creatinghomes.se</a><br />
+              <strong>Telefon:</strong>
+              <a href="tel:+46738182802">073&nbsp;818&nbsp;28&nbsp;02</a>
+            </p>
           </div>
           <!-- Lead-formulär som samlar in kontaktuppgifter -->
-          <form class="lead-form" data-lead-form>
+          <form class="lead-form" data-lead-form data-animate="fade-up">
             <label for="name">Namn</label>
             <input id="name" name="name" type="text" required />
 
@@ -651,6 +1011,11 @@
       </div>
     </footer>
 
+    <script src="scripts/hero-video.js" defer></script>
+    <script src="scripts/gallery-carousel.js" defer></script>
+    <script src="scripts/text-sequence.js" defer></script>
+    <script src="scripts/animations.js" defer></script>
+    <script src="scripts/pricing-carousel.js" defer></script>
     <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>
     <!-- Inlinelogik för årtalsuppdatering och mobilnavigation -->
