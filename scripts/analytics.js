@@ -1,4 +1,4 @@
-/* Enkel trackinghantering för Creating Homes landningssida */
+/* Enkel trackinghantering för Creating Homes STHLM AB landningssida */
 (function () {
   const MEASUREMENT_ID = "G-XXXXXXX"; // ersätt med faktisk GA4-ID
 
