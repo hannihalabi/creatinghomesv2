@@ -989,6 +989,68 @@
             <label for="email">E-post</label>
             <input id="email" name="email" type="email" required />
 
+            <div class="lead-form__choice">
+              <span class="lead-form__choice-label">Vilken tjänst är du intresserad av?</span>
+              <div class="lead-form__choice-group" role="group" aria-label="Välj tjänst">
+                <input
+                  class="lead-form__choice-input"
+                  type="radio"
+                  name="serviceType"
+                  id="service-styling"
+                  value="Styling"
+                  required
+                />
+                <label class="lead-form__choice-button" for="service-styling">Styling</label>
+
+                <input
+                  class="lead-form__choice-input"
+                  type="radio"
+                  name="serviceType"
+                  id="service-heminredning"
+                  value="Heminredning"
+                  required
+                />
+                <label class="lead-form__choice-button" for="service-heminredning">
+                  Heminredning
+                </label>
+              </div>
+            </div>
+
+            <div class="lead-form__choice">
+              <span class="lead-form__choice-label">Önskas tilläggstjänster?</span>
+              <div class="lead-form__choice-group" role="group" aria-label="Önskas tilläggstjänster">
+                <input
+                  class="lead-form__choice-input"
+                  type="radio"
+                  name="addonsPreference"
+                  id="addons-yes"
+                  value="Ja"
+                  required
+                />
+                <label class="lead-form__choice-button" for="addons-yes">Ja</label>
+
+                <input
+                  class="lead-form__choice-input"
+                  type="radio"
+                  name="addonsPreference"
+                  id="addons-no"
+                  value="Nej"
+                  required
+                />
+                <label class="lead-form__choice-button" for="addons-no">Nej</label>
+
+                <input
+                  class="lead-form__choice-input"
+                  type="radio"
+                  name="addonsPreference"
+                  id="addons-unknown"
+                  value="Vet ej"
+                  required
+                />
+                <label class="lead-form__choice-button" for="addons-unknown">Vet ej än</label>
+              </div>
+            </div>
+
             <label for="message">Berätta mer</label>
             <textarea id="message" name="message" rows="4"></textarea>
 
@@ -1007,7 +1069,7 @@
     <footer class="footer section--light">
       <div class="container">
         <strong class="footer__brand">Creating Homes</strong>
-        <p>© <span id="currentYear"></span> Creating Homes AB. Alla rättigheter förbehållna.</p>
+        <p>© <span id="currentYear"></span> Creating Homes STHLM AB. Alla rättigheter förbehållna.</p>
       </div>
     </footer>
 
