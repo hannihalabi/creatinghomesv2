@@ -914,6 +914,13 @@
   margin-inline: -2.5rem;
 }
 
+@media (max-width: 768px) {
+  .media-gallery__viewport {
+    width: calc(100% + (var(--space-sm) * 2));
+    margin-inline: calc(var(--space-sm) * -1);
+  }
+}
+
 .media-gallery__track {
   display: flex;
   gap: var(--space-md);
