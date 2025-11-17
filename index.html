@@ -496,7 +496,7 @@
                     <article class="process__item" data-animate="fade-up">
                       <h4>2. Offert</h4>
                       <p>
-                        Innehåller åtgärdslista, pris, checklista och våra villkor. Du får alltid din offert inom 24 timmar.
+                        Innehåller åtgärdslista, pris, checklista och våra villkor. Du får alltid din offert inom 24h.
                       </p>
                     </article>
                     <article class="process__item" data-animate="fade-up">
@@ -508,7 +508,7 @@
                     <article class="process__item" data-animate="fade-up">
                       <h4>4. Styling</h4>
                       <p>
-                        Vi tar hand om allt – från planering och transport till styling på plats. Du lämnar över nycklarna så löser vi resten.
+                        Vi tar hand om allt – från planering och transport till styling på plats. Det enda du behöver göra är att lämna över nycklarna, så löser vi resten.
                       </p>
                     </article>
                     <article class="process__item" data-animate="fade-up">
@@ -1136,13 +1136,18 @@
             <textarea id="message" name="message" rows="4"></textarea>
 
             <label for="project-images">Bilder (valfritt)</label>
-            <input
-              id="project-images"
-              name="projectImages"
-              type="file"
-              accept="image/*"
-              multiple
-            />
+            <div class="lead-form__file" data-file-upload>
+              <input
+                id="project-images"
+                name="projectImages"
+                type="file"
+                accept="image/*"
+                multiple
+                class="lead-form__file-input"
+              />
+              <label class="lead-form__file-trigger" for="project-images">Bifoga bilder</label>
+              <span class="lead-form__file-preview" data-file-preview>Inga filer valda</span>
+            </div>
             <p class="lead-form__hint">
               Bifoga inspirationsbilder eller foton på bostaden (jpg, png eller webp).
             </p>
@@ -1171,6 +1176,7 @@
     <script src="scripts/text-sequence.js" defer></script>
     <script src="scripts/animations.js" defer></script>
     <script src="scripts/process-carousel.js" defer></script>
+    <script src="scripts/file-upload.js" defer></script>
     <script src="scripts/pricing-carousel.js" defer></script>
     <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>

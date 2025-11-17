@@ -1575,6 +1575,48 @@ section#tjanster .lottie-wrapper {
   resize: vertical;
 }
 
+.lead-form__file {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.lead-form__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.lead-form__file-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: calc(var(--radius-base) / 1.1);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.lead-form__file-trigger:hover,
+.lead-form__file-trigger:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.lead-form__file-preview {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
 .lead-form__hint {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
