@@ -1185,6 +1185,72 @@ section#tjanster .lottie-wrapper {
   padding-left: var(--space-md);
 }
 
+.process-carousel {
+  margin-top: var(--space-md);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.process-carousel__tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-base);
+  padding: calc(var(--space-xs) * 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.process-carousel__tab {
+  flex: 1 1 150px;
+  border: none;
+  border-radius: calc(var(--radius-base) / 1.2);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.process-carousel__tab.is-active {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.process-carousel__viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-surface);
+  scrollbar-width: none;
+}
+
+.process-carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.process-carousel__track {
+  display: flex;
+  min-width: 100%;
+  align-items: flex-start;
+}
+
+.process-carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: var(--space-md);
+}
+
+.process-carousel__title {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
 /* Ken Burns slideshow container wrapping project photos */
 .kenburns-gallery {
   position: relative;
@@ -1509,6 +1575,12 @@ section#tjanster .lottie-wrapper {
   resize: vertical;
 }
 
+.lead-form__hint {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-top: calc(var(--space-xs) * -0.5);
+}
+
 /* Legal copy beneath the form */
 .lead-form__agreement {
   font-size: 0.875rem;
@@ -1549,4 +1621,17 @@ section#tjanster .lottie-wrapper {
     padding-top: var(--space-sm);
   }
 
+  .process-carousel__tabs {
+    justify-content: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .process-carousel__tab {
+    flex: 0 0 auto;
+    padding: var(--space-xs) var(--space-lg);
+  }
+
+  .process-carousel__slide {
+    padding: var(--space-lg);
+  }
 }

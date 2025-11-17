@@ -230,8 +230,8 @@
                 <h3 class="card__title">Heminredning</h3>
               </div>
               <p>
-                Säljsmart styling som lyfter fram hemmets styrkor och lockar rätt
-                köpare vid visning och fotografering.
+                Personligt koncept, färg- och materialval samt möblering som knyter
+                ihop rummen till en helhet som ökar din bostadsförsäljning.
               </p>
             </article>
             <article class="card" data-animate="fade-up">
@@ -240,8 +240,8 @@
                 <h3 class="card__title">Styling</h3>
               </div>
               <p>
-                Personligt koncept, färg- och materialval samt möblering som knyter
-                ihop rummen till en helhet som ökar din bostadsförsäljning.
+                Säljsmart styling som lyfter fram hemmets styrkor och lockar rätt
+                köpare vid visning och fotografering.
               </p>
             </article>
             <article class="card" data-animate="fade-up">
@@ -400,39 +400,133 @@
         </div>
       </section>
 
-      <!-- Sektion som beskriver arbetsprocessen steg för steg -->
+      <!-- Sektion som beskriver arbetsprocesserna steg för steg -->
       <section class="section section--light" id="process">
         <div class="container">
           <h2>Så arbetar vi tillsammans</h2>
-          <div class="process">
-            <article class="process__item" data-animate="fade-up">
-              <h3>1. Konsultation</h3>
-              <p>
-                Vi analyserar behov, budget och stilpreferenser. Digitalt eller
-                på plats, helt kostnadsfritt.
-              </p>
-            </article>
-            <article class="process__item" data-animate="fade-up">
-              <h3>2. Offert</h3>
-              <p>
-                Moodboards, färgpalett, möbelförslag och visualiseringar. Allt
-                samlat i en tydlig plan för godkännande.
-              </p>
-            </article>
-            <article class="process__item" data-animate="fade-up">
-              <h3>3. Planering</h3>
-              <p>
-                Vi sätter tidslinjer, bokar leverantörer och säkerställer att varje detalj är
-                förberedd innan start – från logistik till materialval.
-              </p>
-            </article>
-            <article class="process__item" data-animate="fade-up">
-              <h3>4. Genomförande</h3>
-              <p>
-                Vi koordinerar beställningar, leverans och styling på plats så att
-                allt landar exakt som planerat.
-              </p>
-            </article>
+          <div class="process-carousel" data-process-carousel>
+            <div
+              class="process-carousel__tabs"
+              role="tablist"
+              aria-label="Välj process"
+            >
+              <button
+                type="button"
+                class="process-carousel__tab is-active"
+                id="process-tab-heminredning"
+                role="tab"
+                aria-selected="true"
+                aria-controls="process-panel-heminredning"
+                data-process-tab="0"
+              >
+                Heminredning
+              </button>
+              <button
+                type="button"
+                class="process-carousel__tab"
+                id="process-tab-styling"
+                role="tab"
+                aria-selected="false"
+                aria-controls="process-panel-styling"
+                data-process-tab="1"
+              >
+                Stylinguppdrag
+              </button>
+            </div>
+            <div
+              class="process-carousel__viewport"
+              data-process-viewport
+              aria-live="polite"
+            >
+              <div class="process-carousel__track">
+                <article
+                  class="process-carousel__slide"
+                  id="process-panel-heminredning"
+                  role="tabpanel"
+                  aria-labelledby="process-tab-heminredning"
+                  data-process-slide
+                >
+                  <h3 class="process-carousel__title">Process för heminredning</h3>
+                  <div class="process">
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>1. Konsultation</h4>
+                      <p>
+                        Vi analyserar behov, budget och stilpreferenser. Digitalt eller
+                        på plats, helt kostnadsfritt.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>2. Offert</h4>
+                      <p>
+                        Moodboards, färgpalett, möbelförslag och visualiseringar. Allt
+                        samlat i en tydlig plan för godkännande.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>3. Planering</h4>
+                      <p>
+                        Vi sätter tidslinjer, bokar leverantörer och säkerställer att varje detalj är
+                        förberedd innan start – från logistik till materialval.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>4. Genomförande</h4>
+                      <p>
+                        Vi koordinerar beställningar, leverans och styling på plats så att
+                        allt landar exakt som planerat.
+                      </p>
+                    </article>
+                  </div>
+                </article>
+                <article
+                  class="process-carousel__slide"
+                  id="process-panel-styling"
+                  role="tabpanel"
+                  aria-labelledby="process-tab-styling"
+                  data-process-slide
+                >
+                  <h3 class="process-carousel__title">Process för stylinguppdrag</h3>
+                  <div class="process">
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>1. Konsultation</h4>
+                      <p>
+                        Vi går igenom bostaden och tittar på vad du behöver göra inför försäljningen, samt vad vi kan hjälpa till med.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>2. Offert</h4>
+                      <p>
+                        Innehåller åtgärdslista, pris, checklista och våra villkor. Du får alltid din offert inom 24 timmar.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>3. Planering</h4>
+                      <p>
+                        Efter godkänd offert planerar vi datum för genomförande av styling och fotografering.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>4. Styling</h4>
+                      <p>
+                        Vi tar hand om allt – från planering och transport till styling på plats. Du lämnar över nycklarna så löser vi resten.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>5. Foto och visning</h4>
+                      <p>
+                        Efter fotograferingen står stylingen kvar för visning i 40 dagar.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>6. Såld bostad</h4>
+                      <p>
+                        Ni hör av er när försäljningen är klar, och vi ordnar upphämtningen av stylingen enligt överenskommen tid.
+                      </p>
+                    </article>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -650,7 +744,7 @@
       <section class="section section--alt" id="om-oss">
         <div class="container about-section">
           <div class="about-intro">
-            <h2>Inredningsarkitekter med känsla för detaljer</h2>
+            <h2>Inredare med känsla för detaljer</h2>
             <div
               class="team-story about-story"
               data-sequence
@@ -659,9 +753,9 @@
             >
               <div class="team-story__slide is-active" data-sequence-step>
                 <p>
-                  Creating Homes STHLM AB leds av stylistteamet Teresia och Evelina. Tillsammans
-                  väver de samman estetik, beteendepsykologi och hållbar sourcing för att skapa
-                  miljöer med lång livslängd.
+                  Creating Homes STHLM AB drivs av stylistduon Teresia och Evelina. Tillsammans
+                  blandar de känsla för stil, förståelse för hur människor funkar och hållbara val
+                  för att skapa miljöer som håller länge.
                 </p>
               </div>
               <div class="team-story__slide" data-sequence-step>
@@ -805,8 +899,8 @@
           <div class="pricing__intro" data-animate="fade-up">
             <h2>Styling inför försäljning</h2>
             <p>
-              Välj den nivå som passar bostaden bäst – från helhetslösning i tomma hem till en
-              lätt uppfräschning i redan möblerade bostäder.
+              Med vår expertis rekommenderar vi dig det paket som skapar bäst resultat för din
+              bostadsförsäljning.
             </p>
           </div>
           <div class="pricing-carousel" data-pricing-carousel data-animate="fade-up">
@@ -1041,6 +1135,18 @@
             <label for="message">Berätta mer</label>
             <textarea id="message" name="message" rows="4"></textarea>
 
+            <label for="project-images">Bilder (valfritt)</label>
+            <input
+              id="project-images"
+              name="projectImages"
+              type="file"
+              accept="image/*"
+              multiple
+            />
+            <p class="lead-form__hint">
+              Bifoga inspirationsbilder eller foton på bostaden (jpg, png eller webp).
+            </p>
+
             <div class="lead-form__agreement">
               Genom att skicka godkänner du att vi kontaktar dig via e-post.
             </div>
@@ -1064,6 +1170,7 @@
     <script src="scripts/gallery-carousel.js" defer></script>
     <script src="scripts/text-sequence.js" defer></script>
     <script src="scripts/animations.js" defer></script>
+    <script src="scripts/process-carousel.js" defer></script>
     <script src="scripts/pricing-carousel.js" defer></script>
     <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>
