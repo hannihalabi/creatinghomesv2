@@ -1,7 +1,8 @@
-- Byta plats på styling och heminredning
-- Lägg till kvadratmeter, adress, hiss 
-- Önskas tilläggstjänster? (städ, flytt, magasinering, målning)
-- Sektion: Inredning med tydligt resultat (lägg till att vi jobbar med helhetslösningar)
-- Lägg in instagram logo under "se tidigare projekt" och NAV-bar 
-- Lägg in utmärkelser 
-- Animeringar är för snabba, sakta ned.
+
+
+
+
+Optimeringar:
+- Bilder ska vara anpassade för webb för minskade storlek
+- Viewpoints ska vara optimerade
+- Lägg till hook mellan kontaktformulär och e-post

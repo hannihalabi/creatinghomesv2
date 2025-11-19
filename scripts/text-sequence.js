@@ -5,7 +5,8 @@
 
     const dots = Array.from(container.querySelectorAll("[data-sequence-dot]"));
     const intervalAttr = parseInt(container.getAttribute("data-sequence-interval"), 10);
-    const interval = Number.isFinite(intervalAttr) ? intervalAttr : 7000;
+    const baseInterval = Number.isFinite(intervalAttr) ? intervalAttr : 7000;
+    const interval = Math.max(Math.round(baseInterval * 1.35), baseInterval + 1500);
     let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
     let timerId = null;
 
