@@ -847,14 +847,42 @@
             </a>
           </div>
           <div class="guide-preview-wrapper" data-animate="fade-up">
-            <div class="guide-preview">
-              <div class="guide-preview__frame">
-                <iframe
-                  src="Guide_blurred.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-                  title="Förhandsvisning av Creating Homes guide"
-                  class="guide-preview__pdf"
-                  loading="lazy"
-                ></iframe>
+            <div
+              class="guide-preview"
+              data-guide-viewer
+              data-pdf="Guide_blurred.pdf"
+              data-total-pages="5"
+            >
+              <div
+                class="guide-preview__canvas"
+                role="img"
+                aria-label="Förhandsvisning av Creating Homes guide"
+              >
+                <canvas aria-hidden="true"></canvas>
+                <div class="guide-preview__loading" data-guide-loading role="status" aria-live="polite">
+                  Köp guiden
+                </div>
+              </div>
+              <div class="guide-preview__controls" aria-label="Navigera i guiden">
+                <button
+                  class="guide-preview__button"
+                  type="button"
+                  data-guide-prev
+                  aria-label="Visa föregående sida"
+                >
+                  <span aria-hidden="true">&lsaquo;</span>
+                </button>
+                <div class="guide-preview__status" data-guide-page-status aria-live="polite">
+                  Sida 1 / 5
+                </div>
+                <button
+                  class="guide-preview__button"
+                  type="button"
+                  data-guide-next
+                  aria-label="Visa nästa sida"
+                >
+                  <span aria-hidden="true">&rsaquo;</span>
+                </button>
               </div>
             </div>
           </div>
@@ -1342,6 +1370,11 @@
       </div>
     </footer>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      defer
+    ></script>
+    <script src="scripts/guide-viewer.js" defer></script>
     <script src="scripts/hero-video.js" defer></script>
     <script src="scripts/gallery-carousel.js" defer></script>
     <script src="scripts/text-sequence.js" defer></script>
