@@ -14,9 +14,10 @@
       carousel.getAttribute("data-carousel-interval"),
       10
     );
-    const autoplayInterval = Number.isFinite(autoplayIntervalAttr)
+    const baseInterval = Number.isFinite(autoplayIntervalAttr)
       ? autoplayIntervalAttr
       : 6500;
+    const autoplayInterval = Math.round(baseInterval * 1.5);
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
     let autoplayTimer = null;
