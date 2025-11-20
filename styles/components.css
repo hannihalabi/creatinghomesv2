@@ -1419,6 +1419,7 @@ section#tjanster .lottie-wrapper {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   border-radius: var(--radius-base);
   box-shadow: var(--shadow-soft);
   background: var(--color-surface);
@@ -1445,6 +1446,146 @@ section#tjanster .lottie-wrapper {
   font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   margin-bottom: var(--space-sm);
   color: var(--color-text-primary);
+}
+
+/* Rutnät för processgalleri med små förhandsbilder */
+.process-gallery {
+  position: relative;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+#process-gallery .container {
+  width: min(100% - (var(--space-xs) * 2), 1400px);
+}
+
+.process-gallery__grid {
+  --process-gallery-card-width: clamp(320px, 75vw, 540px);
+  display: flex;
+  gap: clamp(0.5rem, 0.8vw, 0.85rem);
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-inline: var(--space-xs);
+  margin-inline: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-padding-inline: max(calc((100vw - var(--process-gallery-card-width)) / 2), 0px);
+}
+
+.process-gallery__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.process-gallery__grid::before,
+.process-gallery__grid::after {
+  content: "";
+  flex: 0 0 max(calc((100vw - var(--process-gallery-card-width)) / 2), 0px);
+  height: 1px;
+}
+
+.process-gallery__item {
+  position: relative;
+  flex: 0 0 var(--process-gallery-card-width);
+  overflow: hidden;
+  border-radius: var(--radius-base);
+  aspect-ratio: var(--process-gallery-aspect, 4 / 3);
+  background: var(--color-surface);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  scroll-snap-align: center;
+  transition: transform 220ms ease;
+}
+
+.process-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 220ms ease;
+}
+
+.process-gallery__item:hover img,
+.process-gallery__item:focus-within img {
+  transform: scale(1.03);
+}
+
+.process-gallery__more {
+  display: none;
+}
+
+.process-gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(13, 11, 9, 0.6);
+  padding: clamp(1rem, 2vw, 2rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: 999;
+}
+
+.process-gallery-lightbox.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.process-gallery-lightbox__content {
+  position: relative;
+  max-width: min(95vw, 900px);
+  width: 100%;
+  border-radius: calc(var(--radius-base) * 1.2);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.process-gallery-lightbox__image {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.process-gallery-lightbox__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-gallery-lightbox__close:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  #process-gallery .container {
+    width: 100%;
+    padding-inline: var(--space-xs);
+  }
+
+  .process-gallery__item {
+    scroll-snap-align: center;
+  }
 }
 
 /* Ken Burns slideshow container wrapping project photos */
