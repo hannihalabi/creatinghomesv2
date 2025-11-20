@@ -28,6 +28,22 @@
       }
     };
 
+    const centerSlide = (element, behavior = "auto") => {
+      if (!element) return;
+      const scrollValue =
+        element.offsetLeft +
+        element.offsetWidth / 2 -
+        track.clientWidth / 2;
+      track.scrollTo({
+        left: Math.max(0, scrollValue),
+        behavior,
+      });
+    };
+
+    const centerFirstSlide = () => {
+      centerSlide(slides[0], "auto");
+    };
+
     const getStep = () => Math.max(viewport.clientWidth * 0.85, 1);
 
     const scrollByStep = (direction) => {
@@ -133,24 +149,24 @@
     track.addEventListener("touchstart", stopAutoplay, { passive: true });
     track.addEventListener("touchend", () => startAutoplay(true));
 
+    const handleResize = () => {
+      updateButtons();
+      syncVideos();
+      centerFirstSlide();
+      startAutoplay(true);
+    };
+
     if ("ResizeObserver" in window) {
-      const resizeObserver = new ResizeObserver(() => {
-        updateButtons();
-        syncVideos();
-        startAutoplay(true);
-      });
+      const resizeObserver = new ResizeObserver(handleResize);
       resizeObserver.observe(track);
       resizeObserver.observe(viewport);
     } else {
-      window.addEventListener("resize", () => {
-        updateButtons();
-        syncVideos();
-        startAutoplay(true);
-      });
+      window.addEventListener("resize", handleResize);
     }
 
     updateButtons();
     syncVideos();
+    centerFirstSlide();
     startAutoplay(true);
   }
 
