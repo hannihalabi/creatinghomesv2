@@ -1118,13 +1118,24 @@
 }
 
 .media-gallery__track {
+  --media-gallery-card-width: clamp(320px, 95vw, 520px);
   display: flex;
   gap: var(--space-md);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-bottom: var(--space-sm);
+  padding-inline: var(--space-sm);
+  margin-inline: 0;
   -webkit-overflow-scrolling: touch;
+  scroll-padding-inline: max(calc((100vw - var(--media-gallery-card-width)) / 2), 0px);
+}
+
+.media-gallery__track::before,
+.media-gallery__track::after {
+  content: "";
+  flex: 0 0 max(calc((100vw - var(--media-gallery-card-width)) / 2), 0px);
+  height: 1px;
 }
 
 .media-gallery__track::-webkit-scrollbar {
@@ -1132,7 +1143,7 @@
 }
 
 .media-gallery__item {
-  flex: 0 0 clamp(320px, 95vw, 520px);
+  flex: 0 0 var(--media-gallery-card-width);
   scroll-snap-align: center;
   background-color: var(--color-surface);
   border-radius: var(--radius-base);
