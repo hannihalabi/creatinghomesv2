@@ -10,22 +10,12 @@
     }
 
     const slides = Array.from(track.querySelectorAll("[data-gallery-slide]"));
-    const intervalAttr = parseInt(
-      gallery.getAttribute("data-gallery-interval"),
-      10
-    );
-    const autoplayInterval = Number.isFinite(intervalAttr) ? intervalAttr : 6000;
-    let autoplayTimer = null;
-    let scrollRaf = null;
 
     const updateButtons = () => {
       const maxScroll = track.scrollWidth - track.clientWidth;
       const tolerance = 4;
       prevBtn.disabled = track.scrollLeft <= tolerance;
       nextBtn.disabled = track.scrollLeft >= maxScroll - tolerance || maxScroll <= 0;
-      if (maxScroll <= tolerance) {
-        stopAutoplay();
-      }
     };
 
     const centerSlide = (element, behavior = "auto") => {
@@ -61,19 +51,6 @@
       });
     };
 
-    const scrollForward = () => {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      if (maxScroll <= 0) return;
-      const tolerance = 4;
-      if (track.scrollLeft >= maxScroll - tolerance) {
-        centerFirstSlide("smooth");
-      } else {
-        scrollByStep(1);
-      }
-    };
-
-    const canScroll = () => track.scrollWidth - track.clientWidth > 4;
-
     const findActiveIndex = () => {
       const viewportRect = viewport.getBoundingClientRect();
       let nearestIndex = 0;
@@ -105,63 +82,23 @@
       });
     };
 
-    const stopAutoplay = () => {
-      if (autoplayTimer) {
-        clearInterval(autoplayTimer);
-        autoplayTimer = null;
-      }
-    };
-
-    const startAutoplay = (forceRestart = false) => {
-      if (forceRestart) {
-        stopAutoplay();
-      } else if (autoplayTimer) {
-        return;
-      }
-      if (autoplayInterval <= 0 || slides.length <= 1 || !canScroll()) {
-        stopAutoplay();
-        return;
-      }
-      autoplayTimer = window.setInterval(scrollForward, autoplayInterval);
-    };
-
-    const restartAutoplay = () => {
-      startAutoplay(true);
-    };
-
     prevBtn.addEventListener("click", () => {
       scrollByStep(-1);
-      restartAutoplay();
     });
 
     nextBtn.addEventListener("click", () => {
       scrollByStep(1);
-      restartAutoplay();
     });
 
     track.addEventListener("scroll", () => {
-      if (scrollRaf) {
-        cancelAnimationFrame(scrollRaf);
-      }
-      scrollRaf = window.requestAnimationFrame(() => {
-        updateButtons();
-        syncVideos();
-      });
+      updateButtons();
+      syncVideos();
     });
-
-    track.addEventListener("pointerdown", stopAutoplay);
-    track.addEventListener("pointerup", () => startAutoplay(true));
-    track.addEventListener("pointercancel", () => startAutoplay(true));
-    track.addEventListener("mouseenter", stopAutoplay);
-    track.addEventListener("mouseleave", () => startAutoplay(true));
-    track.addEventListener("touchstart", stopAutoplay, { passive: true });
-    track.addEventListener("touchend", () => startAutoplay(true));
 
     const handleResize = () => {
       updateButtons();
       syncVideos();
       scheduleCenterFirstSlide();
-      startAutoplay(true);
     };
 
     if ("ResizeObserver" in window) {
@@ -175,7 +112,6 @@
     updateButtons();
     syncVideos();
     scheduleCenterFirstSlide();
-    startAutoplay(true);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
