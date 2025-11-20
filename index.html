@@ -35,7 +35,7 @@
       content="Professionell heminredning som speglar din stil och lyfter värdet på hemmet. Boka en kostnadsfri konsultation."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="pics/spacejoy-KSfe2Z4REEM-unsplash.jpg" />
+    <meta property="og:image" content="pics/extrapics/spacejoy-KSfe2Z4REEM-unsplash.jpg" />
     <meta property="og:locale" content="sv_SE" />
     <!-- Strukturerad data för sökmotorer -->
     <script type="application/ld+json">
@@ -44,7 +44,7 @@
         "@type": "ProfessionalService",
         "name": "Creating Homes STHLM AB",
         "url": "https://creatinghomes.se/",
-        "image": "https://creatinghomes.se/pics/spacejoy-KSfe2Z4REEM-unsplash.jpg",
+        "image": "https://creatinghomes.se/pics/extrapics/spacejoy-KSfe2Z4REEM-unsplash.jpg",
         "description": "Creating Homes STHLM AB erbjuder skräddarsydd interior styling och heminredning för bostäder och kontor.",
         "areaServed": {
           "@type": "AdministrativeArea",
@@ -159,7 +159,7 @@
             autoplay
             muted
             playsinline
-            preload="auto"
+            preload="metadata"
             data-hero-intro-primary
           >
             <source src="AI-videos/video4.mp4" type="video/mp4" />
@@ -1204,7 +1204,14 @@
             </p>
           </div>
           <!-- Lead-formulär som samlar in kontaktuppgifter -->
-          <form class="lead-form" data-lead-form data-animate="fade-up">
+          <form
+            class="lead-form"
+            data-lead-form
+            data-animate="fade-up"
+            action="https://formsubmit.co/info@creatinghomes.se"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <label for="name">Namn</label>
             <input id="name" name="name" type="text" required />
 
@@ -1335,6 +1342,7 @@
             <div class="lead-form__agreement">
               Genom att skicka godkänner du att vi kontaktar dig via e-post.
             </div>
+            <input type="hidden" name="_subject" value="Nytt lead från Creating Homes" />
             <button class="cta" type="submit" data-cta="lead-form">
               Skicka förfrågan
             </button>

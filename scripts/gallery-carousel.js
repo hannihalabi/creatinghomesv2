@@ -16,6 +16,7 @@
     );
     const autoplayInterval = Number.isFinite(intervalAttr) ? intervalAttr : 6000;
     let autoplayTimer = null;
+    let scrollRaf = null;
 
     const updateButtons = () => {
       const maxScroll = track.scrollWidth - track.clientWidth;
@@ -48,6 +49,37 @@
     };
 
     const canScroll = () => track.scrollWidth - track.clientWidth > 4;
+
+    const findActiveIndex = () => {
+      const viewportRect = viewport.getBoundingClientRect();
+      let nearestIndex = 0;
+      let minDistance = Number.POSITIVE_INFINITY;
+
+      slides.forEach((slide, index) => {
+        const rect = slide.getBoundingClientRect();
+        const distance = Math.abs(rect.left - viewportRect.left);
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestIndex = index;
+        }
+      });
+
+      return nearestIndex;
+    };
+
+    const syncVideos = () => {
+      const activeIndex = findActiveIndex();
+      slides.forEach((slide, index) => {
+        const video = slide.querySelector("video");
+        if (!video) return;
+        if (index === activeIndex) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    };
 
     const stopAutoplay = () => {
       if (autoplayTimer) {
@@ -84,7 +116,13 @@
     });
 
     track.addEventListener("scroll", () => {
-      window.requestAnimationFrame(updateButtons);
+      if (scrollRaf) {
+        cancelAnimationFrame(scrollRaf);
+      }
+      scrollRaf = window.requestAnimationFrame(() => {
+        updateButtons();
+        syncVideos();
+      });
     });
 
     track.addEventListener("pointerdown", stopAutoplay);
@@ -98,6 +136,7 @@
     if ("ResizeObserver" in window) {
       const resizeObserver = new ResizeObserver(() => {
         updateButtons();
+        syncVideos();
         startAutoplay(true);
       });
       resizeObserver.observe(track);
@@ -105,11 +144,13 @@
     } else {
       window.addEventListener("resize", () => {
         updateButtons();
+        syncVideos();
         startAutoplay(true);
       });
     }
 
     updateButtons();
+    syncVideos();
     startAutoplay(true);
   }
 

@@ -85,13 +85,14 @@ const GUIDE_VIEWER_PDFJS_VERSION = "3.11.174";
         .then((page) => {
           const containerWidth = canvasContainer.clientWidth || 1;
           const unscaledViewport = page.getViewport({ scale: 1 });
-          const scale = containerWidth / unscaledViewport.width;
-          const viewport = page.getViewport({ scale });
+          const cssScale = containerWidth / unscaledViewport.width;
+          const deviceScale = window.devicePixelRatio || 1;
+          const viewport = page.getViewport({ scale: cssScale * deviceScale });
 
           canvas.height = viewport.height;
           canvas.width = viewport.width;
-          canvas.style.width = `${viewport.width}px`;
-          canvas.style.height = `${viewport.height}px`;
+          canvas.style.width = `${viewport.width / deviceScale}px`;
+          canvas.style.height = `${viewport.height / deviceScale}px`;
 
           const renderContext = {
             canvasContext: ctx,

@@ -9,17 +9,31 @@
 
     const desktopQuery = window.matchMedia("(min-width: 900px)");
 
-    if (desktopQuery.matches) {
-      primaryIntro.classList.remove("is-visible");
-      mainVideo.classList.add("is-visible");
-      mainVideo.loop = true;
-      mainVideo.play().catch(() => {});
-      return;
-    }
+    const setMode = () => {
+      if (desktopQuery.matches) {
+        primaryIntro.classList.remove("is-visible");
+        mainVideo.classList.add("is-visible");
+        mainVideo.loop = true;
+        primaryIntro.pause();
+        mainVideo.preload = "metadata";
+        mainVideo.play().catch(() => {});
+      } else {
+        mainVideo.classList.remove("is-visible");
+        primaryIntro.classList.add("is-visible");
+        mainVideo.pause();
+        primaryIntro.loop = true;
+        primaryIntro.preload = "metadata";
+        primaryIntro.play().catch(() => {});
+      }
+    };
 
-    primaryIntro.classList.add("is-visible");
-    primaryIntro.loop = true;
-    primaryIntro.play().catch(() => {});
+    setMode();
+
+    if (typeof desktopQuery.addEventListener === "function") {
+      desktopQuery.addEventListener("change", setMode);
+    } else if (typeof desktopQuery.addListener === "function") {
+      desktopQuery.addListener(setMode);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", initHeroVideo);
