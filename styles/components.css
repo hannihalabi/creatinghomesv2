@@ -1942,6 +1942,13 @@ section#tjanster .lottie-wrapper {
   gap: var(--space-sm);
 }
 
+.faq-link {
+  margin-left: var(--space-sm);
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 /* Card styling for each question/answer */
 .faq details {
   background-color: var(--color-surface);
