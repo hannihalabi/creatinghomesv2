@@ -30,15 +30,16 @@
 
     const centerSlide = (element, behavior = "auto") => {
       if (!element) return;
-      const scrollValue =
-        element.offsetLeft +
-        element.offsetWidth / 2 -
-        track.clientWidth / 2;
+      const slideRect = element.getBoundingClientRect();
+      const viewportRect = viewport.getBoundingClientRect();
+      const delta =
+        slideRect.left -
+        viewportRect.left -
+        (viewportRect.width - slideRect.width) / 2;
+      const targetScroll = track.scrollLeft + delta;
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
       track.scrollTo({
-        left: Math.max(
-          0,
-          Math.min(scrollValue, Math.max(0, track.scrollWidth - track.clientWidth))
-        ),
+        left: Math.min(Math.max(targetScroll, 0), maxScroll),
         behavior,
       });
     };

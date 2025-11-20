@@ -986,6 +986,12 @@
   box-shadow: var(--shadow-soft);
 }
 
+.card--styling,
+.card--heminredning,
+.card--tillagg {
+  order: 0;
+}
+
 /* Card header aligns icon and title */
 .card__header {
   display: flex;
@@ -1013,6 +1019,24 @@
   color: var(--color-accent);
   font-size: 1.5rem;
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card--styling {
+    order: 1;
+  }
+
+  .card--heminredning {
+    order: 2;
+  }
+
+  .card--tillagg {
+    order: 3;
+  }
 }
 
 /* Gallery section */
