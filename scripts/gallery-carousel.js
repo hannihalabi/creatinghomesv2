@@ -35,7 +35,10 @@
         element.offsetWidth / 2 -
         track.clientWidth / 2;
       track.scrollTo({
-        left: Math.max(0, scrollValue),
+        left: Math.max(
+          0,
+          Math.min(scrollValue, Math.max(0, track.scrollWidth - track.clientWidth))
+        ),
         behavior,
       });
     };
@@ -62,7 +65,7 @@
       if (maxScroll <= 0) return;
       const tolerance = 4;
       if (track.scrollLeft >= maxScroll - tolerance) {
-        track.scrollTo({ left: 0, behavior: "smooth" });
+        centerFirstSlide("smooth");
       } else {
         scrollByStep(1);
       }
