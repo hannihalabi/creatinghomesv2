@@ -40,8 +40,12 @@
       });
     };
 
-    const centerFirstSlide = () => {
-      centerSlide(slides[0], "auto");
+    const centerFirstSlide = (behavior = "auto") => {
+      centerSlide(slides[0], behavior);
+    };
+
+    const scheduleCenterFirstSlide = (behavior = "auto") => {
+      requestAnimationFrame(() => centerFirstSlide(behavior));
     };
 
     const getStep = () => Math.max(viewport.clientWidth * 0.85, 1);
@@ -152,7 +156,7 @@
     const handleResize = () => {
       updateButtons();
       syncVideos();
-      centerFirstSlide();
+      scheduleCenterFirstSlide();
       startAutoplay(true);
     };
 
@@ -166,7 +170,7 @@
 
     updateButtons();
     syncVideos();
-    centerFirstSlide();
+    scheduleCenterFirstSlide();
     startAutoplay(true);
   }
 
