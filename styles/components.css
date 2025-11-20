@@ -1172,6 +1172,61 @@
   padding: calc(var(--space-sm) * 1.1);
 }
 
+.reco-badges-grid {
+  margin-top: var(--space-md);
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.reco-badge-card {
+  border-radius: calc(var(--radius-base) * 1.2);
+  background: var(--color-surface);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.reco-badge-card .reco-badge {
+  width: min(320px, 80%);
+  min-height: 240px;
+  margin-inline: auto;
+}
+
+.reco-badge-card__label {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .reco-badges-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .reco-badge-card {
+    min-height: 220px;
+  }
+
+  .reco-badge-card .reco-badge {
+    width: min(280px, 80%);
+    min-height: 240px;
+  }
+
+  .reco-badge-card__label {
+    display: none;
+  }
+}
+
 .media-gallery__track {
   --media-gallery-card-width: clamp(320px, 95vw, 520px);
   display: flex;

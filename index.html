@@ -450,41 +450,32 @@
       <!-- Reco utmärkelser -->
       <section class="section section--alt" id="utmärkelser">
         <div class="container">
-          <h2 data-animate="fade-up">Utmärkelser från Reco</h2>
-          <p data-animate="fade-up">
+          <h2>Utmärkelser från Reco</h2>
+          <p>
             Vi är stolta över att ha uppmärksammats flera år i rad av Reco – ett kvitto på nöjda kunder
             och en trygg process genom varje projekt.
           </p>
-          <div
-            class="reco-badges-carousel"
-            data-reco-carousel
-            data-carousel-interval="6000"
-            data-animate="fade-up"
-          >
-            <div class="reco-badges-carousel__viewport">
-              <div class="reco-badges-carousel__track">
-                <div class="reco-badge-slide">
-                  <div id="reco--badge-yearsInRowBadge" class="reco-badge"></div>
-                  <script src="https://widget.reco.se/yearsInRowBadge/4043941.js"></script>
-                </div>
-                <div class="reco-badge-slide">
-                  <div id="reco--badge-2025" class="reco-badge"></div>
-                  <script src="https://widget.reco.se/badge/2025/4043941.js"></script>
-                </div>
-                <div class="reco-badge-slide">
-                  <div id="reco--badge-2024" class="reco-badge"></div>
-                  <script src="https://widget.reco.se/badge/2024/4043941.js"></script>
-                </div>
-                <div class="reco-badge-slide">
-                  <div id="reco--badge-2023" class="reco-badge"></div>
-                  <script src="https://widget.reco.se/badge/2023/4043941.js"></script>
-                </div>
-                <div class="reco-badge-slide">
-                  <div id="reco--badge-2022" class="reco-badge"></div>
-                  <script src="https://widget.reco.se/badge/2022/4043941.js"></script>
-                </div>
-              </div>
-            </div>
+          <div class="reco-badges-grid">
+            <article class="reco-badge-card">
+              <div id="reco--badge-yearsInRowBadge" class="reco-badge"></div>
+              <script src="https://widget.reco.se/yearsInRowBadge/4043941.js"></script>
+              <p class="reco-badge-card__label">Återkommande utmärkelse</p>
+            </article>
+            <article class="reco-badge-card">
+              <div id="reco--badge-2025" class="reco-badge"></div>
+              <script src="https://widget.reco.se/badge/2025/4043941.js"></script>
+              <p class="reco-badge-card__label">Reco 2025</p>
+            </article>
+            <article class="reco-badge-card">
+              <div id="reco--badge-2024" class="reco-badge"></div>
+              <script src="https://widget.reco.se/badge/2024/4043941.js"></script>
+              <p class="reco-badge-card__label">Reco 2024</p>
+            </article>
+            <article class="reco-badge-card">
+              <div id="reco--badge-2023" class="reco-badge"></div>
+              <script src="https://widget.reco.se/badge/2023/4043941.js"></script>
+              <p class="reco-badge-card__label">Reco 2023</p>
+            </article>
           </div>
         </div>
       </section>
@@ -502,24 +493,24 @@
               <button
                 type="button"
                 class="process-carousel__tab is-active"
-                id="process-tab-heminredning"
+                id="process-tab-styling"
                 role="tab"
                 aria-selected="true"
-                aria-controls="process-panel-heminredning"
+                aria-controls="process-panel-styling"
                 data-process-tab="0"
               >
-                Heminredning
+                Stylinguppdrag
               </button>
               <button
                 type="button"
                 class="process-carousel__tab"
-                id="process-tab-styling"
+                id="process-tab-heminredning"
                 role="tab"
                 aria-selected="false"
-                aria-controls="process-panel-styling"
+                aria-controls="process-panel-heminredning"
                 data-process-tab="1"
               >
-                Stylinguppdrag
+                Heminredning
               </button>
             </div>
             <div
@@ -528,45 +519,6 @@
               aria-live="polite"
             >
               <div class="process-carousel__track">
-                <article
-                  class="process-carousel__slide"
-                  id="process-panel-heminredning"
-                  role="tabpanel"
-                  aria-labelledby="process-tab-heminredning"
-                  data-process-slide
-                >
-                  <h3 class="process-carousel__title">Process för heminredning</h3>
-                  <div class="process">
-                    <article class="process__item" data-animate="fade-up">
-                      <h4>1. Konsultation</h4>
-                      <p>
-                        Vi analyserar behov, budget och stilpreferenser. Digitalt eller
-                        på plats, helt kostnadsfritt.
-                      </p>
-                    </article>
-                    <article class="process__item" data-animate="fade-up">
-                      <h4>2. Offert</h4>
-                      <p>
-                        Moodboards, färgpalett, möbelförslag och visualiseringar. Allt
-                        samlat i en tydlig plan för godkännande.
-                      </p>
-                    </article>
-                    <article class="process__item" data-animate="fade-up">
-                      <h4>3. Planering</h4>
-                      <p>
-                        Vi sätter tidslinjer, bokar leverantörer och säkerställer att varje detalj är
-                        förberedd innan start – från logistik till materialval.
-                      </p>
-                    </article>
-                    <article class="process__item" data-animate="fade-up">
-                      <h4>4. Genomförande</h4>
-                      <p>
-                        Vi koordinerar beställningar, leverans och styling på plats så att
-                        allt landar exakt som planerat.
-                      </p>
-                    </article>
-                  </div>
-                </article>
                 <article
                   class="process-carousel__slide"
                   id="process-panel-styling"
@@ -610,6 +562,45 @@
                       <h4>6. Såld bostad</h4>
                       <p>
                         Ni hör av er när försäljningen är klar, och vi ordnar upphämtningen av stylingen enligt överenskommen tid.
+                      </p>
+                    </article>
+                  </div>
+                </article>
+                <article
+                  class="process-carousel__slide"
+                  id="process-panel-heminredning"
+                  role="tabpanel"
+                  aria-labelledby="process-tab-heminredning"
+                  data-process-slide
+                >
+                  <h3 class="process-carousel__title">Process för heminredning</h3>
+                  <div class="process">
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>1. Konsultation</h4>
+                      <p>
+                        Vi analyserar behov, budget och stilpreferenser. Digitalt eller
+                        på plats, helt kostnadsfritt.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>2. Offert</h4>
+                      <p>
+                        Moodboards, färgpalett, möbelförslag och visualiseringar. Allt
+                        samlat i en tydlig plan för godkännande.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>3. Planering</h4>
+                      <p>
+                        Vi sätter tidslinjer, bokar leverantörer och säkerställer att varje detalj är
+                        förberedd innan start – från logistik till materialval.
+                      </p>
+                    </article>
+                    <article class="process__item" data-animate="fade-up">
+                      <h4>4. Genomförande</h4>
+                      <p>
+                        Vi koordinerar beställningar, leverans och styling på plats så att
+                        allt landar exakt som planerat.
                       </p>
                     </article>
                   </div>
@@ -730,7 +721,7 @@
           <div data-animate="fade-up">
             <h2>Köp våran guide</h2>
             <p>
-              Vill du styla ditt hem som ett proffs? Vår guide samlar våra viktigaste tips, checklistor
+              Vill du inreda ditt hem som ett proffs? Vår guide samlar våra viktigaste tips, checklistor
               och favoritlösningar så att du kan skapa en wow-känsla steg för steg.
             </p>
             <p>
@@ -1285,7 +1276,6 @@
     <script src="scripts/process-carousel.js" defer></script>
     <script src="scripts/file-upload.js" defer></script>
     <script src="scripts/pricing-carousel.js" defer></script>
-    <script src="scripts/reco-carousel.js" defer></script>
     <script src="scripts/process-gallery.js" defer></script>
     <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>
