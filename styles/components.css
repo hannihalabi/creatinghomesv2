@@ -473,6 +473,12 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .hero__social {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /* Grid wrapper for list of team members */
