@@ -115,8 +115,13 @@
       });
     };
 
-    const centerFirstSlide = () => {
-      centerSlide(items[0], "auto");
+    const datasetStart = Number(wrapper.dataset.galleryStart);
+    const startIndex = Number.isFinite(datasetStart)
+      ? Math.max(0, Math.min(datasetStart, items.length - 1))
+      : 0;
+
+    const centerStartSlide = () => {
+      centerSlide(items[startIndex], "auto");
     };
 
     track.addEventListener("pointerenter", stopAutoplay);
@@ -126,7 +131,7 @@
 
     const handleResize = () => {
       startAutoplay();
-      centerFirstSlide();
+      centerStartSlide();
     };
 
     if ("ResizeObserver" in window) {
@@ -182,7 +187,7 @@
     });
 
     track.scrollTo({ left: 0 });
-    centerFirstSlide();
+    centerStartSlide();
     startAutoplay();
   }
 
