@@ -1,76 +1,26 @@
-(function () {
-  const TRANSITION = "transform 700ms ease";
+const recoCarousel = document.querySelector("[data-reco-carousel]");
 
-  function initCarousel(root) {
-    const track = root.querySelector(".reco-badges-carousel__track");
-    if (!track) return;
+if (recoCarousel) {
+  const slides = Array.from(
+    recoCarousel.querySelectorAll("[data-reco-slide]")
+  );
 
-    const originalSlides = Array.from(track.children);
-    if (originalSlides.length <= 1) return;
+  if (slides.length > 1) {
+    let activeIndex = slides.findIndex((slide) =>
+      slide.classList.contains("is-visible")
+    );
 
-    const intervalAttr = parseInt(root.getAttribute("data-carousel-interval"), 10);
-    const interval = Number.isFinite(intervalAttr) ? intervalAttr : 6000;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    // Clone första sliden för mjuk oändlig loop
-    const clone = originalSlides[0].cloneNode(true);
-    track.appendChild(clone);
-
-    let currentIndex = 0;
-    let autoplayId = null;
-
-    const applyTransform = (withTransition = true) => {
-      track.style.transition = withTransition ? TRANSITION : "none";
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    };
-
-    const goNext = () => {
-      currentIndex += 1;
-      applyTransform(true);
-    };
-
-    const stopAutoplay = () => {
-      if (autoplayId) {
-        clearInterval(autoplayId);
-        autoplayId = null;
-      }
-    };
-
-    const startAutoplay = () => {
-      if (prefersReducedMotion.matches || interval <= 0) {
-        stopAutoplay();
-        return;
-      }
-      stopAutoplay();
-      autoplayId = window.setInterval(goNext, interval);
-    };
-
-    track.addEventListener("transitionend", () => {
-      const totalSlides = track.children.length;
-      if (currentIndex === totalSlides - 1) {
-        track.style.transition = "none";
-        currentIndex = 0;
-        track.style.transform = "translateX(0)";
-        requestAnimationFrame(() => {
-          // force reflow innan vi återställer transition
-          void track.offsetHeight;
-          track.style.transition = TRANSITION;
-        });
-      }
-    });
-
-    root.addEventListener("mouseenter", stopAutoplay);
-    root.addEventListener("mouseleave", startAutoplay);
-
-    if (typeof prefersReducedMotion.addEventListener === "function") {
-      prefersReducedMotion.addEventListener("change", startAutoplay);
+    if (activeIndex === -1) {
+      activeIndex = 0;
+      slides[0].classList.add("is-visible");
     }
 
-    applyTransform(false);
-    startAutoplay();
-  }
+    const rotateSlide = () => {
+      slides[activeIndex].classList.remove("is-visible");
+      activeIndex = (activeIndex + 1) % slides.length;
+      slides[activeIndex].classList.add("is-visible");
+    };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-reco-carousel]").forEach(initCarousel);
-  });
-})();
+    setInterval(rotateSlide, 3000);
+  }
+}

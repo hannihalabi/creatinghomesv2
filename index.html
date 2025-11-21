@@ -443,27 +443,29 @@
             Vi är stolta över att ha uppmärksammats flera år i rad av Reco – ett kvitto på nöjda kunder
             och en trygg process genom varje projekt.
           </p>
-          <div class="reco-badges-grid">
-            <article class="reco-badge-card">
-              <div id="reco--badge-yearsInRowBadge" class="reco-badge"></div>
-              <script src="https://widget.reco.se/yearsInRowBadge/4043941.js"></script>
-              <p class="reco-badge-card__label">Återkommande utmärkelse</p>
-            </article>
-            <article class="reco-badge-card">
-              <div id="reco--badge-2025" class="reco-badge"></div>
-              <script src="https://widget.reco.se/badge/2025/4043941.js"></script>
-              <p class="reco-badge-card__label">Reco 2025</p>
-            </article>
-            <article class="reco-badge-card">
-              <div id="reco--badge-2024" class="reco-badge"></div>
-              <script src="https://widget.reco.se/badge/2024/4043941.js"></script>
-              <p class="reco-badge-card__label">Reco 2024</p>
-            </article>
-            <article class="reco-badge-card">
-              <div id="reco--badge-2023" class="reco-badge"></div>
-              <script src="https://widget.reco.se/badge/2023/4043941.js"></script>
-              <p class="reco-badge-card__label">Reco 2023</p>
-            </article>
+          <div
+            class="reco-carousel"
+            aria-label="Reco utmärkelser"
+            data-reco-carousel
+            aria-live="polite"
+          >
+            <div class="reco-carousel__track">
+              <figure class="reco-card reco-card--slide is-visible" data-reco-slide>
+                <img src="reco/2022.png" alt="Reco utmärkelse 2022" loading="lazy" />
+              </figure>
+              <figure class="reco-card reco-card--slide" data-reco-slide>
+                <img src="reco/2023.png" alt="Reco utmärkelse 2023" loading="lazy" />
+              </figure>
+              <figure class="reco-card reco-card--slide" data-reco-slide>
+                <img src="reco/2024.png" alt="Reco utmärkelse 2024" loading="lazy" />
+              </figure>
+              <figure class="reco-card reco-card--slide" data-reco-slide>
+                <img src="reco/2025.png" alt="Reco utmärkelse 2025" loading="lazy" />
+              </figure>
+              <figure class="reco-card reco-card--slide" data-reco-slide>
+                <img src="reco/4-ar.png" alt="Reco utmärkelse 4 år" loading="lazy" />
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -1267,6 +1269,7 @@
     <script src="scripts/file-upload.js" defer></script>
     <script src="scripts/pricing-carousel.js" defer></script>
     <script src="scripts/process-gallery.js" defer></script>
+    <script src="scripts/reco-carousel.js" defer></script>
     <!-- Skript som hanterar spårning av CTA:er och formulär -->
     <script src="scripts/analytics.js" defer></script>
     <!-- Inlinelogik för årtalsuppdatering och mobilnavigation -->
