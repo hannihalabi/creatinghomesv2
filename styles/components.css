@@ -22,7 +22,8 @@
   flex-wrap: nowrap;
   padding: var(--space-xs) var(--space-sm);
   border-radius: calc(var(--radius-base) * 1.2);
-  background: rgba(47, 74, 92, 0.85); /* Hague Blue */
+  background: rgba(47, 74, 92, 0.85);
+  /* Hague Blue */
   backdrop-filter: blur(18px);
   color: var(--color-text-inverse);
   pointer-events: auto;
@@ -178,6 +179,7 @@
 
 /* Responsive header adjustments on tablet and below */
 @media (max-width: 900px) {
+
   /* Dock header to top of viewport once layout stacks */
   .site-header {
     position: fixed;
@@ -228,7 +230,8 @@
     margin: 0;
     padding: var(--space-xs);
     border-radius: calc(var(--radius-base) * 0.9);
-    background: rgba(47, 74, 92, 0.95); /* Hague Blue */
+    background: rgba(47, 74, 92, 0.95);
+    /* Hague Blue */
     box-shadow: var(--shadow-soft);
   }
 
@@ -395,19 +398,16 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(58, 44, 40, 0.7) 20%,
-    rgba(58, 44, 40, 0.35) 60%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
+  background: linear-gradient(120deg,
+      rgba(58, 44, 40, 0.7) 20%,
+      rgba(58, 44, 40, 0.35) 60%,
+      rgba(0, 0, 0, 0.15) 100%);
 }
 
 /* Main hero copy block with generous padding */
 .hero__content {
   position: relative;
-  padding: calc(var(--space-xl) * (4) + var(--space-md)) var(--space-xl) var(--space-xl)
-    var(--space-lg);
+  padding: calc(var(--space-xl) * (4) + var(--space-md)) var(--space-xl) var(--space-xl) var(--space-lg);
   color: #ffffff;
   max-width: 540px;
 }
@@ -456,6 +456,7 @@
 }
 
 @media (max-width: 900px) {
+
   /* Hero-specific tweaks when layout collapses */
   .hero .container {
     justify-content: left;
@@ -464,8 +465,7 @@
   .hero__content {
     margin-inline: auto;
     text-align: left;
-    padding: calc(var(--space-xl) * (0) + var(--space-md)) var(--space-lg)
-      var(--space-xl) var(--space-md);
+    padding: calc(var(--space-xl) * (0) + var(--space-md)) var(--space-lg) var(--space-xl) var(--space-md);
   }
 
   /* Center CTAs when columns collapse */
@@ -507,11 +507,9 @@
   gap: var(--space-sm);
   padding: var(--space-md);
   border-radius: calc(var(--radius-base) * 1.3);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(230, 216, 207, 0.6) 100%
-  );
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(230, 216, 207, 0.6) 100%);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
@@ -522,11 +520,9 @@
   position: absolute;
   inset: -60% auto -60% -40%;
   width: 60%;
-  background: radial-gradient(
-    circle at center,
-    rgba(193, 106, 74, 0.16) 0%,
-    rgba(193, 106, 74, 0) 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(193, 106, 74, 0.16) 0%,
+      rgba(193, 106, 74, 0) 70%);
   pointer-events: none;
 }
 
@@ -634,6 +630,7 @@
 
 /* Tablet breakpoint: stretch team layout into columns */
 @media (min-width: 620px) {
+
   /* Give cards extra breathing room as grid widens */
   /* Two-up team layout for wider screens */
   .team-profiles {
@@ -670,18 +667,22 @@
     opacity: 0;
     transform: translateY(12px);
   }
+
   6% {
     opacity: 1;
     transform: translateY(0);
   }
+
   28% {
     opacity: 1;
     transform: translateY(0);
   }
+
   34% {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-8px);
@@ -693,7 +694,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: var(--space-xs);
-  margin-top: calc(var(--space-md) + 1rem); 
+  margin-top: calc(var(--space-md) + 1rem);
 }
 
 /* Keep hero buttons tidy and evenly padded */
@@ -724,6 +725,9 @@
 
 .hero__social {
   margin-top: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .social-link {
@@ -1687,11 +1691,9 @@ section#tjanster .lottie-wrapper {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0) 40%
-  );
+  background: linear-gradient(120deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0) 40%);
   pointer-events: none;
   z-index: 2;
 }
@@ -1709,11 +1711,13 @@ section#tjanster .lottie-wrapper {
 
 /* Bobbing motion for the Lottie illustration */
 @keyframes lottieFloat {
+
   0%,
   100% {
     transform: translateY(0);
     filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
   }
+
   50% {
     transform: translateY(-12px);
     filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.12));
@@ -1726,18 +1730,22 @@ section#tjanster .lottie-wrapper {
     opacity: 0;
     transform: translateY(12px);
   }
+
   5% {
     opacity: 1;
     transform: translateY(0);
   }
+
   13% {
     opacity: 1;
     transform: translateY(0);
   }
+
   16% {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-10px);
@@ -1746,16 +1754,19 @@ section#tjanster .lottie-wrapper {
 
 /* Pulse animation for carousel dots */
 @keyframes testimonialDot {
+
   0%,
   100% {
     opacity: 0.3;
     transform: scale(0.9);
   }
+
   6%,
   14% {
     opacity: 1;
     transform: scale(1.15);
   }
+
   16% {
     opacity: 0.45;
     transform: scale(0.95);
@@ -1764,11 +1775,13 @@ section#tjanster .lottie-wrapper {
 
 /* Slow glow sweeping underneath testimonial card */
 @keyframes testimonialGlow {
+
   0%,
   100% {
     transform: rotate(0deg) scale(1);
     opacity: 0.5;
   }
+
   50% {
     transform: rotate(18deg) scale(1.12);
     opacity: 0.85;
@@ -1777,10 +1790,12 @@ section#tjanster .lottie-wrapper {
 
 /* Inner pulse for hero CTA button */
 @keyframes heroCtaPulse {
+
   0%,
   100% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.45);
   }
+
   60% {
     box-shadow: 0 0 0 14px rgba(255, 255, 255, 0);
   }
@@ -1792,10 +1807,12 @@ section#tjanster .lottie-wrapper {
     transform: scale(0.92);
     opacity: 0.7;
   }
+
   70% {
     transform: scale(1.2);
     opacity: 0;
   }
+
   100% {
     transform: scale(1.2);
     opacity: 0;
@@ -1806,18 +1823,23 @@ section#tjanster .lottie-wrapper {
 .kenburns-gallery__item:nth-child(1) {
   animation-delay: 0s;
 }
+
 .kenburns-gallery__item:nth-child(2) {
   animation-delay: 6s;
 }
+
 .kenburns-gallery__item:nth-child(3) {
   animation-delay: 12s;
 }
+
 .kenburns-gallery__item:nth-child(4) {
   animation-delay: 18s;
 }
+
 .kenburns-gallery__item:nth-child(5) {
   animation-delay: 24s;
 }
+
 .kenburns-gallery__item:nth-child(6) {
   animation-delay: 30s;
 }
@@ -1836,17 +1858,21 @@ section#tjanster .lottie-wrapper {
     opacity: 0;
     transform: scale(1.05) translate3d(0%, 0, 0);
   }
+
   5% {
     opacity: 1;
   }
+
   22% {
     opacity: 1;
     transform: scale(1.16) translate3d(4%, 0, 0);
   }
+
   27% {
     opacity: 0;
     transform: scale(1.2) translate3d(8%, 0, 0);
   }
+
   100% {
     opacity: 0;
     transform: scale(1.2) translate3d(8%, 0, 0);
@@ -1974,14 +2000,14 @@ section#tjanster .lottie-wrapper {
     box-shadow 150ms ease;
 }
 
-.lead-form__choice-input:checked + .lead-form__choice-button {
+.lead-form__choice-input:checked+.lead-form__choice-button {
   background: var(--color-accent);
   color: var(--color-text-inverse);
   border-color: var(--color-accent-strong);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
-.lead-form__choice-input:focus-visible + .lead-form__choice-button,
+.lead-form__choice-input:focus-visible+.lead-form__choice-button,
 .lead-form__choice-button:focus-visible {
   outline: 3px solid rgba(47, 74, 92, 0.45);
   outline-offset: 2px;
@@ -2110,6 +2136,7 @@ section#tjanster .lottie-wrapper {
 
 /* Tablet+ adjustments for cards and process layout */
 @media (min-width: 768px) {
+
   /* Lay cards out in three columns when space allows */
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));

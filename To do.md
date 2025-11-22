@@ -3,6 +3,9 @@
 
 
 Optimeringar:
-- Bilder ska vara anpassade för webb för minskade storlek
+✅ Bilder ska vara anpassade för webb för minskade storlek
 - Viewpoints ska vara optimerade
-- Lägg till hook mellan kontaktformulär och e-post
+✅ Lägg till hook mellan kontaktformulär och e-post
+- Engelsk version
+
+
