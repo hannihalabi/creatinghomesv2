@@ -2170,3 +2170,13 @@ section#tjanster .lottie-wrapper {
     padding: var(--space-lg);
   }
 }
+
+
+/* Section logo styling */
+.section-logo {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto var(--space-sm);
+  padding-bottom: 48px;
+}
