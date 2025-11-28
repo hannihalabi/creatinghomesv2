@@ -2,7 +2,7 @@
 .form-message {
     display: none;
     padding: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    margin: var(--space-sm) 0;
     border-radius: var(--radius-base);
     font-weight: 500;
     font-size: 0.95rem;

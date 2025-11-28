@@ -818,14 +818,14 @@
           </p>
         </div>
         <!-- Lead form capturing contact details -->
-        <iframe name="lead-form-target" data-form-target hidden></iframe>
-        <form class="lead-form" data-lead-form data-animate="fade-up" target="lead-form-target"
-          action="https://formsubmit.co/info@creatinghomes.se" method="POST" enctype="multipart/form-data">
+        <form class="lead-form" data-lead-form data-animate="fade-up"
+          data-success-message="Thank you! We have received your inquiry and will get back shortly."
+          data-error-message="Oops! Something went wrong. Please try again or email us directly."
+          action="https://formsubmit.co/ajax/hanni.halabi@icloud.com" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_subject" value="New inquiry from website">
-          <input type="hidden" name="_cc" value="hanni.halabi@icloud.com">
-
+          <input type="hidden" name="_cc" value="info@creatinghomes.se">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required />
 
@@ -903,7 +903,7 @@
           <div class="lead-form__agreement">
             By sending, you agree that we contact you via email.
           </div>
-          <button class="cta" type="submit" data-cta="lead-form">
+          <button class="cta" type="submit" data-cta="lead-form" data-loading-text="Sending...">
             Send Request
           </button>
           <div class="form-message" data-form-message aria-live="polite"></div>

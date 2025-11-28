@@ -1,49 +1,104 @@
 (function () {
-    const form = document.querySelector("[data-lead-form]");
-    const messageContainer = document.querySelector("[data-form-message]");
-    const submitButton = document.querySelector("[data-cta='lead-form']");
-    const formTarget = document.querySelector("[data-form-target]");
-
-    if (!form || !messageContainer || !submitButton || !formTarget) return;
-
-    const originalButtonText = submitButton.textContent;
-    let isSubmitting = false;
-
-    function showMessage(type, text) {
-        messageContainer.textContent = text;
-        messageContainer.className = `form-message form-message--${type}`;
-        messageContainer.style.display = "block";
-
-        if (type === "success") {
-            setTimeout(() => {
-                messageContainer.style.display = "none";
-            }, 8000);
-        }
+    if (typeof window === "undefined" || typeof window.fetch !== "function" || typeof window.FormData === "undefined") {
+        return;
     }
 
-    function setLoading(isLoading) {
-        if (isLoading) {
-            submitButton.disabled = true;
-            submitButton.textContent = "Skickar...";
-            submitButton.classList.add("is-loading");
-        } else {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.classList.remove("is-loading");
-        }
+    const forms = document.querySelectorAll("[data-lead-form]");
+    if (!forms.length) {
+        return;
     }
 
-    form.addEventListener("submit", function () {
-        isSubmitting = true;
-        setLoading(true);
-        messageContainer.style.display = "none";
-    });
+    forms.forEach((form) => {
+        const messageContainer = form.querySelector("[data-form-message]");
+        const submitButton = form.querySelector("[data-cta='lead-form']");
 
-    formTarget.addEventListener("load", function () {
-        if (!isSubmitting) return;
-        isSubmitting = false;
-        setLoading(false);
-        showMessage("success", "Tack! Vi har mottagit din förfrågan och återkommer inom kort.");
-        form.reset();
+        if (!messageContainer || !submitButton) {
+            return;
+        }
+
+        const originalButtonText = submitButton.textContent;
+        const loadingText = submitButton.getAttribute("data-loading-text") || "Skickar...";
+        const successMessage = form.dataset.successMessage ||
+            "Tack! Vi har mottagit din förfrågan och återkommer inom kort.";
+        const errorMessage = form.dataset.errorMessage ||
+            "Oj! Något gick fel. Försök igen eller mejla oss direkt.";
+
+        let isSubmitting = false;
+        let hideTimeoutId = null;
+
+        const hideMessage = () => {
+            if (hideTimeoutId) {
+                clearTimeout(hideTimeoutId);
+                hideTimeoutId = null;
+            }
+            messageContainer.style.display = "none";
+            messageContainer.className = "form-message";
+            messageContainer.textContent = "";
+        };
+
+        const showMessage = (type, text) => {
+            if (hideTimeoutId) {
+                clearTimeout(hideTimeoutId);
+                hideTimeoutId = null;
+            }
+            messageContainer.textContent = text;
+            messageContainer.className = `form-message form-message--${type}`;
+            messageContainer.style.display = "block";
+
+            if (type === "success") {
+                hideTimeoutId = window.setTimeout(() => {
+                    hideMessage();
+                }, 8000);
+            }
+        };
+
+        const setLoading = (isLoading) => {
+            if (isLoading) {
+                submitButton.disabled = true;
+                submitButton.textContent = loadingText;
+                submitButton.classList.add("is-loading");
+            } else {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                submitButton.classList.remove("is-loading");
+            }
+        };
+
+        const handleSubmit = async (event) => {
+            event.preventDefault();
+            if (isSubmitting) {
+                return;
+            }
+
+            isSubmitting = true;
+            setLoading(true);
+            hideMessage();
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: form.method || "POST",
+                    headers: {
+                        Accept: "application/json",
+                    },
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error(`FormSubmit responded with ${response.status}`);
+                }
+
+                showMessage("success", successMessage);
+                form.reset();
+            } catch (error) {
+                console.error("Lead form submission failed", error);
+                showMessage("error", errorMessage);
+            } finally {
+                setLoading(false);
+                isSubmitting = false;
+            }
+        };
+
+        form.addEventListener("submit", handleSubmit);
     });
 })();
