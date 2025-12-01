@@ -1,0 +1,19 @@
+# Ignore vendor directory (will be created by composer)
+vendor/
+
+# Ignore error logs
+error.log
+*.log
+
+# Ignore config with sensitive data (create config.php from config.example.php)
+config.php
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

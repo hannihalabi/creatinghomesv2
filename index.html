@@ -3,17 +3,20 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJV6RV8L');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KJV6RV8L');</script>
   <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-31473664DD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-31473664DD');
@@ -76,8 +79,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body id="top">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJV6RV8L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJV6RV8L" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Heroavsnitt med navigation, video och huvudbudskap -->
   <header class="hero-section">
@@ -835,12 +838,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Lead-formulär som samlar in kontaktuppgifter -->
         <form class="lead-form" data-lead-form data-animate="fade-up"
           data-success-message="Tack! Vi har mottagit din förfrågan och återkommer inom kort."
-          data-error-message="Oj! Något gick fel. Försök igen eller mejla oss direkt."
-          action="https://formsubmit.co/ajax/hanni.halabi@icloud.com" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="Ny förfrågan från hemsidan">
-          <input type="hidden" name="_cc" value="info@creatinghomes.se">
+          data-error-message="Oj! Något gick fel. Försök igen eller mejla oss direkt." action="send-email.php"
+          method="POST" enctype="multipart/form-data">
+
           <label for="name">Namn</label>
           <input id="name" name="name" type="text" required />
 
